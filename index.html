@@ -24,87 +24,110 @@
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    html { scroll-behavior: smooth; }
     body { font-family: 'PT Sans', sans-serif; }
     h1,h2,h3,h4,h5,h6 { font-family: 'Philosopher', serif; }
+    /* Active nav underline via JS */
+    nav a.active { color: #FF6210; border-bottom: 2px solid #FF6210; }
+    /* Gallery lightbox */
+    #lightbox { display: none; }
+    #lightbox.active { display: flex; }
+    /* Contact form focus */
+    input:focus, textarea:focus {
+      outline: 2px dotted #FF6210;
+      outline-offset: 2px;
+    }
+    /* Offset anchor targets so they aren't hidden under sticky header */
+    section[id] { scroll-margin-top: 72px; }
   </style>
 </head>
 <body class="bg-cream text-brown-dark">
 
-  <!-- HEADER -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
+  <!-- ═══════════════════════════════════════════════
+       HEADER / NAV
+  ════════════════════════════════════════════════ -->
+  <header class="bg-white shadow-sm sticky top-0 z-50" id="top">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <!-- Logo -->
-      <a href="index.html" class="font-heading text-2xl font-bold text-brown-dark tracking-wide">
-        [PLACEHOLDER: Logo / Name]
+      <a href="#hero" class="font-heading text-2xl font-bold text-brown-dark tracking-wide">
+        [PLACEHOLDER: Artist Name]
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-6 text-sm font-body font-bold uppercase tracking-wider text-brown-mid">
-        <a href="index.html" data-page="index.html" class="hover:text-orange transition-colors">Home</a>
-        <a href="about.html" data-page="about.html" class="hover:text-orange transition-colors">About</a>
-        <a href="guru.html" data-page="guru.html" class="hover:text-orange transition-colors">Guru</a>
-        <a href="artists.html" data-page="artists.html" class="hover:text-orange transition-colors">Artists</a>
-        <a href="program.html" data-page="program.html" class="hover:text-orange transition-colors">Program</a>
-        <a href="know-your-roots.html" data-page="know-your-roots.html" class="hover:text-orange transition-colors">Know Your Roots</a>
-        <a href="gallery.html" data-page="gallery.html" class="hover:text-orange transition-colors">Gallery</a>
-        <a href="contact.html" data-page="contact.html" class="hover:text-orange transition-colors">Contact</a>
-        <a href="#" class="bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors">Livestream</a>
+      <nav id="desktop-nav" class="hidden md:flex items-center gap-5 text-xs font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="#about"    class="hover:text-orange transition-colors pb-0.5">About</a>
+        <a href="#guru"     class="hover:text-orange transition-colors pb-0.5">Guru</a>
+        <a href="#artists"  class="hover:text-orange transition-colors pb-0.5">Artists</a>
+        <a href="#program"  class="hover:text-orange transition-colors pb-0.5">Program</a>
+        <a href="#roots"    class="hover:text-orange transition-colors pb-0.5">Know Your Roots</a>
+        <a href="#gallery"  class="hover:text-orange transition-colors pb-0.5">Gallery</a>
+        <a href="#contact"  class="hover:text-orange transition-colors pb-0.5">Contact</a>
+        <a href="#" class="bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors ml-2">Livestream</a>
       </nav>
 
-      <!-- Mobile Hamburger -->
+      <!-- Hamburger -->
       <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 cursor-pointer" aria-label="Toggle menu">
-        <span class="block w-6 h-0.5 bg-brown-dark"></span>
-        <span class="block w-6 h-0.5 bg-brown-dark"></span>
-        <span class="block w-6 h-0.5 bg-brown-dark"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
       </button>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-brown-light px-6 pb-4">
-      <nav class="flex flex-col gap-3 pt-3 text-sm font-body font-bold uppercase tracking-wider text-brown-mid">
-        <a href="index.html" class="hover:text-orange transition-colors">Home</a>
-        <a href="about.html" class="hover:text-orange transition-colors">About</a>
-        <a href="guru.html" class="hover:text-orange transition-colors">Guru</a>
-        <a href="artists.html" class="hover:text-orange transition-colors">Artists</a>
-        <a href="program.html" class="hover:text-orange transition-colors">Program</a>
-        <a href="know-your-roots.html" class="hover:text-orange transition-colors">Know Your Roots</a>
-        <a href="gallery.html" class="hover:text-orange transition-colors">Gallery</a>
-        <a href="contact.html" class="hover:text-orange transition-colors">Contact</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-brown-light px-6 pb-5">
+      <nav class="flex flex-col gap-3 pt-4 text-sm font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="#about"   class="hover:text-orange transition-colors" onclick="closeMobile()">About</a>
+        <a href="#guru"    class="hover:text-orange transition-colors" onclick="closeMobile()">Guru</a>
+        <a href="#artists" class="hover:text-orange transition-colors" onclick="closeMobile()">Artists</a>
+        <a href="#program" class="hover:text-orange transition-colors" onclick="closeMobile()">Program</a>
+        <a href="#roots"   class="hover:text-orange transition-colors" onclick="closeMobile()">Know Your Roots</a>
+        <a href="#gallery" class="hover:text-orange transition-colors" onclick="closeMobile()">Gallery</a>
+        <a href="#contact" class="hover:text-orange transition-colors" onclick="closeMobile()">Contact</a>
         <a href="#" class="inline-block bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors w-fit">Livestream</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="relative h-[90vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════════ -->
+  <section id="hero" class="relative h-screen min-h-[560px] flex items-center justify-center overflow-hidden">
     <img
       src="https://placehold.co/1600x900/E5D7D1/1C0D0A?text=Hero+Image"
       alt="Hero"
       class="absolute inset-0 w-full h-full object-cover"
     />
-    <div class="absolute inset-0 bg-brown-dark/40"></div>
-    <div class="relative z-10 text-center text-white px-6">
-      <p class="font-body uppercase tracking-[0.3em] text-sm mb-4 text-brown-light">
-        [PLACEHOLDER: Tagline / Subtitle — e.g. "EKAM SATH – Truth Is One"]
+    <div class="absolute inset-0 bg-brown-dark/45"></div>
+    <div class="relative z-10 text-center text-white px-6 max-w-3xl mx-auto">
+      <p class="font-body uppercase tracking-[0.35em] text-xs mb-5 text-brown-light">
+        [PLACEHOLDER: Tagline — e.g. "EKAM SATH · Truth Is One"]
       </p>
       <h1 class="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight">
         [PLACEHOLDER: Artist Name]
       </h1>
-      <p class="font-body text-lg md:text-xl max-w-xl mx-auto mb-8 text-brown-light">
-        [PLACEHOLDER: Brief intro — e.g. "A journey through classical Bharatanatyam"]
+      <p class="font-body text-lg md:text-xl max-w-xl mx-auto mb-10 text-brown-light/90">
+        [PLACEHOLDER: One-line intro — e.g. "A journey through classical Bharatanatyam"]
       </p>
-      <a href="about.html" class="bg-orange text-white px-8 py-3 text-sm font-bold uppercase tracking-wider hover:bg-orange-hover transition-colors rounded">
-        Learn More
+      <a href="#about" class="inline-block bg-orange text-white px-8 py-3 text-sm font-bold uppercase tracking-wider hover:bg-orange-hover transition-colors rounded">
+        Explore
       </a>
+    </div>
+    <!-- Scroll cue -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 text-xs font-body animate-bounce">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
     </div>
   </section>
 
-  <!-- FEATURED EVENT -->
+
+  <!-- ═══════════════════════════════════════════════
+       FEATURED EVENT BAND
+  ════════════════════════════════════════════════ -->
   <section class="py-20 px-6 bg-white">
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center">
       <div class="md:w-1/2">
         <img
-          src="https://placehold.co/700x500/FEF1E4/1C0D0A?text=Featured+Event+Image"
+          src="https://placehold.co/700x500/FEF1E4/1C0D0A?text=Featured+Event"
           alt="Featured Event"
           class="w-full rounded shadow-md"
         />
@@ -116,52 +139,456 @@
         <h2 class="font-heading text-4xl font-bold text-brown-dark mb-4 leading-snug">
           [PLACEHOLDER: Event Title]
         </h2>
-        <p class="font-body text-brown-mid text-lg leading-relaxed mb-4">
-          [PLACEHOLDER: Date, Venue — e.g. "August 24, 2024 · Music Academy, Chennai"]
+        <p class="font-body text-brown-mid text-base mb-4">
+          [PLACEHOLDER: Date · Venue]
         </p>
         <p class="font-body text-brown-mid leading-relaxed mb-8">
-          [PLACEHOLDER: Event description — 2–3 sentences about the featured performance or upcoming event.]
+          [PLACEHOLDER: 2–3 sentences about the featured performance or upcoming event.]
         </p>
-        <a href="program.html" class="inline-block bg-orange text-white px-6 py-3 text-sm font-bold uppercase tracking-wider hover:bg-orange-hover transition-colors rounded">
+        <a href="#program" class="inline-block bg-orange text-white px-6 py-3 text-sm font-bold uppercase tracking-wider hover:bg-orange-hover transition-colors rounded">
           View Program
         </a>
       </div>
     </div>
   </section>
 
-  <!-- INTRO QUOTE / TAGLINE BAND -->
-  <section class="bg-cream py-16 px-6 text-center">
+
+  <!-- ═══════════════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════════════════ -->
+  <section id="about" class="py-24 px-6 bg-cream">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-14 items-start">
+      <div class="md:w-2/5 flex-shrink-0">
+        <img
+          src="https://placehold.co/600x750/E5D7D1/1C0D0A?text=Artist+Portrait"
+          alt="Artist Portrait"
+          class="w-full rounded shadow-lg"
+        />
+      </div>
+      <div class="md:w-3/5">
+        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">The Artist</p>
+        <h2 class="font-heading text-4xl font-bold text-brown-dark mb-6">[PLACEHOLDER: Artist Name]</h2>
+        <div class="font-body text-brown-mid text-lg leading-relaxed space-y-5">
+          <p>[PLACEHOLDER: Opening paragraph — introduce the artist, training background, and art form.]</p>
+          <p>[PLACEHOLDER: Journey in the art form — key milestones, performances, awards.]</p>
+          <p>[PLACEHOLDER: Philosophy, inspirations, or vision for the art form.]</p>
+          <p>[PLACEHOLDER: Current pursuits, upcoming events, or teaching activities.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       QUOTE BAND
+  ════════════════════════════════════════════════ -->
+  <section class="bg-brown-dark py-16 px-6 text-center">
     <div class="max-w-3xl mx-auto">
-      <h2 class="font-heading text-3xl md:text-4xl italic text-brown-dark mb-4">
-        "[PLACEHOLDER: Inspirational quote or tagline about the art form]"
+      <h2 class="font-heading text-3xl md:text-4xl italic text-white mb-4">
+        "[PLACEHOLDER: Inspirational quote about the art form]"
       </h2>
-      <p class="font-body text-brown-mid tracking-widest uppercase text-sm">
-        — [PLACEHOLDER: Quote attribution]
+      <p class="font-body text-brown-light/60 tracking-widest uppercase text-sm">
+        — [PLACEHOLDER: Attribution]
       </p>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-brown-dark text-brown-light py-14 px-6">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-      <!-- Col 1: About blurb -->
-      <div>
-        <h4 class="font-heading text-white text-lg font-bold mb-3">[PLACEHOLDER: Artist Name]</h4>
-        <p class="font-body text-sm leading-relaxed text-brown-light/80">
-          [PLACEHOLDER: Short footer blurb — 1–2 sentences about the artist or organization.]
+
+  <!-- ═══════════════════════════════════════════════
+       GURU
+  ════════════════════════════════════════════════ -->
+  <section id="guru" class="py-24 px-6 bg-white">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row-reverse gap-14 items-start">
+      <div class="md:w-2/5 flex-shrink-0">
+        <img
+          src="https://placehold.co/600x750/FEF1E4/1C0D0A?text=Guru+Portrait"
+          alt="Guru Portrait"
+          class="w-full rounded shadow-lg"
+        />
+      </div>
+      <div class="md:w-3/5">
+        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">Guru</p>
+        <h2 class="font-heading text-4xl font-bold text-brown-dark mb-6">[PLACEHOLDER: Guru's Name]</h2>
+        <div class="font-body text-brown-mid text-lg leading-relaxed space-y-5">
+          <p>[PLACEHOLDER: Introduction to the Guru — background, lineage, and expertise.]</p>
+          <p>[PLACEHOLDER: Teaching philosophy and what makes this Guru exceptional.]</p>
+          <p>[PLACEHOLDER: Accomplishments, awards, and notable students.]</p>
+          <p>[PLACEHOLDER: Current activities — school, performances, or community work.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       ARTISTS
+  ════════════════════════════════════════════════ -->
+  <section id="artists" class="py-24 px-6 bg-cream">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">Performing Artists</p>
+        <h2 class="font-heading text-4xl font-bold text-brown-dark">Artists</h2>
+        <p class="font-body text-brown-mid text-lg max-w-2xl mx-auto mt-4">
+          [PLACEHOLDER: Intro — e.g. "Meet the talented musicians and performers accompanying this event."]
         </p>
       </div>
-      <!-- Col 2: Quick Links -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <div class="bg-white rounded shadow-md overflow-hidden group">
+          <div class="overflow-hidden">
+            <img src="https://placehold.co/600x600/FEF1E4/1C0D0A?text=Artist+1" alt="Artist 1" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6">
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">[PLACEHOLDER: Instrument / Role]</p>
+            <h3 class="font-heading text-xl font-bold text-brown-dark mb-2">[PLACEHOLDER: Artist 1 Name]</h3>
+            <p class="font-body text-brown-mid text-sm leading-relaxed">[PLACEHOLDER: Brief bio — 2–3 sentences.]</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded shadow-md overflow-hidden group">
+          <div class="overflow-hidden">
+            <img src="https://placehold.co/600x600/E5D7D1/1C0D0A?text=Artist+2" alt="Artist 2" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6">
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">[PLACEHOLDER: Instrument / Role]</p>
+            <h3 class="font-heading text-xl font-bold text-brown-dark mb-2">[PLACEHOLDER: Artist 2 Name]</h3>
+            <p class="font-body text-brown-mid text-sm leading-relaxed">[PLACEHOLDER: Brief bio — 2–3 sentences.]</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded shadow-md overflow-hidden group">
+          <div class="overflow-hidden">
+            <img src="https://placehold.co/600x600/FEF1E4/1C0D0A?text=Artist+3" alt="Artist 3" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6">
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">[PLACEHOLDER: Instrument / Role]</p>
+            <h3 class="font-heading text-xl font-bold text-brown-dark mb-2">[PLACEHOLDER: Artist 3 Name]</h3>
+            <p class="font-body text-brown-mid text-sm leading-relaxed">[PLACEHOLDER: Brief bio — 2–3 sentences.]</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded shadow-md overflow-hidden group">
+          <div class="overflow-hidden">
+            <img src="https://placehold.co/600x600/E5D7D1/1C0D0A?text=Artist+4" alt="Artist 4" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6">
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">[PLACEHOLDER: Instrument / Role]</p>
+            <h3 class="font-heading text-xl font-bold text-brown-dark mb-2">[PLACEHOLDER: Artist 4 Name]</h3>
+            <p class="font-body text-brown-mid text-sm leading-relaxed">[PLACEHOLDER: Brief bio — 2–3 sentences.]</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded shadow-md overflow-hidden group">
+          <div class="overflow-hidden">
+            <img src="https://placehold.co/600x600/FEF1E4/1C0D0A?text=Artist+5" alt="Artist 5" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6">
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">[PLACEHOLDER: Instrument / Role]</p>
+            <h3 class="font-heading text-xl font-bold text-brown-dark mb-2">[PLACEHOLDER: Artist 5 Name]</h3>
+            <p class="font-body text-brown-mid text-sm leading-relaxed">[PLACEHOLDER: Brief bio — 2–3 sentences.]</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded shadow-md overflow-hidden group">
+          <div class="overflow-hidden">
+            <img src="https://placehold.co/600x600/E5D7D1/1C0D0A?text=Artist+6" alt="Artist 6" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6">
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">[PLACEHOLDER: Instrument / Role]</p>
+            <h3 class="font-heading text-xl font-bold text-brown-dark mb-2">[PLACEHOLDER: Artist 6 Name]</h3>
+            <p class="font-body text-brown-mid text-sm leading-relaxed">[PLACEHOLDER: Brief bio — 2–3 sentences.]</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PROGRAM
+  ════════════════════════════════════════════════ -->
+  <section id="program" class="py-24 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">Program</p>
+        <h2 class="font-heading text-4xl font-bold text-brown-dark">Program</h2>
+        <p class="font-body text-brown-mid text-lg max-w-2xl mx-auto mt-4">
+          [PLACEHOLDER: Intro — e.g. "The following is the program for the Arangetram of…"]
+        </p>
+      </div>
+
+      <div class="space-y-10">
+
+        <div class="border-l-4 border-orange pl-6">
+          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">01</p>
+          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">[PLACEHOLDER: Item Title — e.g. "Pushpanjali"]</h3>
+          <p class="font-body text-brown-mid text-sm italic mb-3">[PLACEHOLDER: Ragam · Thalam · Composer]</p>
+          <p class="font-body text-brown-mid leading-relaxed">[PLACEHOLDER: Description of this piece — 2–3 sentences.]</p>
+        </div>
+
+        <div class="border-l-4 border-orange pl-6">
+          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">02</p>
+          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">[PLACEHOLDER: Item Title]</h3>
+          <p class="font-body text-brown-mid text-sm italic mb-3">[PLACEHOLDER: Ragam · Thalam · Composer]</p>
+          <p class="font-body text-brown-mid leading-relaxed">[PLACEHOLDER: Description.]</p>
+        </div>
+
+        <div class="border-l-4 border-orange pl-6">
+          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">03</p>
+          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">[PLACEHOLDER: Item Title]</h3>
+          <p class="font-body text-brown-mid text-sm italic mb-3">[PLACEHOLDER: Ragam · Thalam · Composer]</p>
+          <p class="font-body text-brown-mid leading-relaxed">[PLACEHOLDER: Description.]</p>
+        </div>
+
+        <div class="border-l-4 border-orange pl-6">
+          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">04</p>
+          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">[PLACEHOLDER: Item Title]</h3>
+          <p class="font-body text-brown-mid text-sm italic mb-3">[PLACEHOLDER: Ragam · Thalam · Composer]</p>
+          <p class="font-body text-brown-mid leading-relaxed">[PLACEHOLDER: Description.]</p>
+        </div>
+
+        <div class="border-l-4 border-orange pl-6">
+          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">05</p>
+          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">[PLACEHOLDER: Item Title]</h3>
+          <p class="font-body text-brown-mid text-sm italic mb-3">[PLACEHOLDER: Ragam · Thalam · Composer]</p>
+          <p class="font-body text-brown-mid leading-relaxed">[PLACEHOLDER: Description.]</p>
+        </div>
+
+        <div class="border-l-4 border-orange pl-6">
+          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">06</p>
+          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">[PLACEHOLDER: Item Title — e.g. "Thillana"]</h3>
+          <p class="font-body text-brown-mid text-sm italic mb-3">[PLACEHOLDER: Ragam · Thalam · Composer]</p>
+          <p class="font-body text-brown-mid leading-relaxed">[PLACEHOLDER: Description.]</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       KNOW YOUR ROOTS
+  ════════════════════════════════════════════════ -->
+  <section id="roots" class="py-24 px-6 bg-cream">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">Education</p>
+        <h2 class="font-heading text-4xl font-bold text-brown-dark">Know Your Roots</h2>
+        <p class="font-body text-brown-mid text-lg max-w-2xl mx-auto mt-4">
+          [PLACEHOLDER: Intro — e.g. "An educational guide to understanding Bharatanatyam for first-time audiences."]
+        </p>
+      </div>
+
+      <div class="space-y-20">
+
+        <div class="flex flex-col md:flex-row gap-10 items-start">
+          <img src="https://placehold.co/500x380/E5D7D1/1C0D0A?text=Image+1" alt="Article 1" class="md:w-2/5 w-full rounded shadow-md flex-shrink-0" />
+          <div>
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-2">[PLACEHOLDER: Category — e.g. "The Art Form"]</p>
+            <h3 class="font-heading text-3xl font-bold text-brown-dark mb-4">[PLACEHOLDER: Title — e.g. "What is Bharatanatyam?"]</h3>
+            <p class="font-body text-brown-mid leading-relaxed mb-4">[PLACEHOLDER: Body paragraph 1 — origins, significance, and structure of the art form.]</p>
+            <p class="font-body text-brown-mid leading-relaxed">[PLACEHOLDER: Body paragraph 2 — Nritta, Nritya, and Natya.]</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse gap-10 items-start">
+          <img src="https://placehold.co/500x380/FEF1E4/1C0D0A?text=Image+2" alt="Article 2" class="md:w-2/5 w-full rounded shadow-md flex-shrink-0" />
+          <div>
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-2">[PLACEHOLDER: Category — e.g. "Abhinaya"]</p>
+            <h3 class="font-heading text-3xl font-bold text-brown-dark mb-4">[PLACEHOLDER: Title — e.g. "The Language of Gestures"]</h3>
+            <p class="font-body text-brown-mid leading-relaxed mb-4">[PLACEHOLDER: Body — mudras, facial expressions, footwork.]</p>
+            <p class="font-body text-brown-mid leading-relaxed">[PLACEHOLDER: Additional details.]</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-10 items-start">
+          <img src="https://placehold.co/500x380/E5D7D1/1C0D0A?text=Image+3" alt="Article 3" class="md:w-2/5 w-full rounded shadow-md flex-shrink-0" />
+          <div>
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-2">[PLACEHOLDER: Category — e.g. "Music & Rhythm"]</p>
+            <h3 class="font-heading text-3xl font-bold text-brown-dark mb-4">[PLACEHOLDER: Title — e.g. "Rhythm and the Mridangam"]</h3>
+            <p class="font-body text-brown-mid leading-relaxed mb-4">[PLACEHOLDER: Body — instruments, talam system, accompanying music.]</p>
+            <p class="font-body text-brown-mid leading-relaxed">[PLACEHOLDER: Additional details.]</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       GALLERY
+  ════════════════════════════════════════════════ -->
+  <section id="gallery" class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">Photography</p>
+        <h2 class="font-heading text-4xl font-bold text-brown-dark">Gallery</h2>
+        <p class="font-body text-brown-mid text-lg max-w-2xl mx-auto mt-4">
+          [PLACEHOLDER: Gallery intro — e.g. "Moments captured from performances and rehearsals."]
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+1">
+          <img src="https://placehold.co/400x400/E5D7D1/1C0D0A?text=Photo+1" alt="Photo 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/FEF1E4/1C0D0A?text=Photo+2">
+          <img src="https://placehold.co/400x400/FEF1E4/1C0D0A?text=Photo+2" alt="Photo 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square col-span-2 row-span-2" data-src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+3">
+          <img src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+3" alt="Photo 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/FEF1E4/1C0D0A?text=Photo+4">
+          <img src="https://placehold.co/400x400/FEF1E4/1C0D0A?text=Photo+4" alt="Photo 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+5">
+          <img src="https://placehold.co/400x400/E5D7D1/1C0D0A?text=Photo+5" alt="Photo 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/FEF1E4/1C0D0A?text=Photo+6">
+          <img src="https://placehold.co/400x400/FEF1E4/1C0D0A?text=Photo+6" alt="Photo 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+7">
+          <img src="https://placehold.co/400x400/E5D7D1/1C0D0A?text=Photo+7" alt="Photo 7" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/FEF1E4/1C0D0A?text=Photo+8">
+          <img src="https://placehold.co/400x400/FEF1E4/1C0D0A?text=Photo+8" alt="Photo 8" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+9">
+          <img src="https://placehold.co/400x400/E5D7D1/1C0D0A?text=Photo+9" alt="Photo 9" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/FEF1E4/1C0D0A?text=Photo+10">
+          <img src="https://placehold.co/400x400/FEF1E4/1C0D0A?text=Photo+10" alt="Photo 10" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+11">
+          <img src="https://placehold.co/400x400/E5D7D1/1C0D0A?text=Photo+11" alt="Photo 11" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/FEF1E4/1C0D0A?text=Photo+12">
+          <img src="https://placehold.co/400x400/FEF1E4/1C0D0A?text=Photo+12" alt="Photo 12" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[100] bg-brown-dark/90 items-center justify-center p-6">
+    <button id="lightbox-close" class="absolute top-6 right-8 text-white text-5xl leading-none hover:text-orange transition-colors">&times;</button>
+    <img id="lightbox-img" src="" alt="Enlarged photo" class="max-w-full max-h-[85vh] rounded shadow-2xl" />
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════════════ -->
+  <section id="contact" class="py-24 px-6 bg-cream">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">Get In Touch</p>
+        <h2 class="font-heading text-4xl font-bold text-brown-dark">Contact</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+        <!-- Info -->
+        <div>
+          <p class="font-body text-brown-mid text-lg leading-relaxed mb-10">
+            [PLACEHOLDER: Contact intro — e.g. "For inquiries about performances, collaborations, or media, reach out below."]
+          </p>
+          <div class="space-y-6 font-body text-brown-mid">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-orange/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-orange fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              <div>
+                <p class="font-bold text-brown-dark text-xs uppercase tracking-wider mb-1">Email</p>
+                <a href="mailto:placeholder@example.com" class="hover:text-orange transition-colors">[PLACEHOLDER: email@example.com]</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-orange/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-orange fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </div>
+              <div>
+                <p class="font-bold text-brown-dark text-xs uppercase tracking-wider mb-1">Location</p>
+                <p>[PLACEHOLDER: City, State / Country]</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-10">
+            <p class="font-body font-bold text-brown-dark text-xs uppercase tracking-wider mb-4">Follow</p>
+            <div class="flex gap-3">
+              <a href="#" class="w-11 h-11 rounded-full bg-orange flex items-center justify-center hover:bg-orange-hover transition-colors" aria-label="Instagram">
+                <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              <a href="#" class="w-11 h-11 rounded-full bg-orange flex items-center justify-center hover:bg-orange-hover transition-colors" aria-label="Facebook">
+                <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="#" class="w-11 h-11 rounded-full bg-orange flex items-center justify-center hover:bg-orange-hover transition-colors" aria-label="YouTube">
+                <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div>
+          <form class="space-y-5" onsubmit="handleSubmit(event)">
+            <div>
+              <label for="name" class="block font-body font-bold text-brown-dark text-xs uppercase tracking-wider mb-2">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name"
+                class="w-full border border-brown-light bg-white px-4 py-3 font-body text-brown-dark placeholder-brown-light/70 rounded focus:border-orange transition-colors" />
+            </div>
+            <div>
+              <label for="email" class="block font-body font-bold text-brown-dark text-xs uppercase tracking-wider mb-2">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com"
+                class="w-full border border-brown-light bg-white px-4 py-3 font-body text-brown-dark placeholder-brown-light/70 rounded focus:border-orange transition-colors" />
+            </div>
+            <div>
+              <label for="subject" class="block font-body font-bold text-brown-dark text-xs uppercase tracking-wider mb-2">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Subject"
+                class="w-full border border-brown-light bg-white px-4 py-3 font-body text-brown-dark placeholder-brown-light/70 rounded focus:border-orange transition-colors" />
+            </div>
+            <div>
+              <label for="message" class="block font-body font-bold text-brown-dark text-xs uppercase tracking-wider mb-2">Message</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Your message…"
+                class="w-full border border-brown-light bg-white px-4 py-3 font-body text-brown-dark placeholder-brown-light/70 rounded focus:border-orange transition-colors resize-none"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full bg-orange text-white font-body font-bold uppercase tracking-wider py-3 rounded hover:bg-orange-hover transition-colors">
+              Send Message
+            </button>
+            <p id="form-success" class="hidden text-center font-body text-sm text-orange font-bold">
+              Thank you! Your message has been sent.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════ -->
+  <footer class="bg-brown-dark text-brown-light py-14 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <h4 class="font-heading text-white text-lg font-bold mb-3">[PLACEHOLDER: Artist Name]</h4>
+        <p class="font-body text-sm leading-relaxed text-brown-light/70">
+          [PLACEHOLDER: Short footer blurb — 1–2 sentences.]
+        </p>
+      </div>
       <div>
         <h4 class="font-heading text-white text-lg font-bold mb-3">Quick Links</h4>
         <ul class="font-body text-sm space-y-2">
-          <li><a href="about.html" class="hover:text-orange transition-colors">About</a></li>
-          <li><a href="program.html" class="hover:text-orange transition-colors">Program</a></li>
-          <li><a href="gallery.html" class="hover:text-orange transition-colors">Gallery</a></li>
-          <li><a href="contact.html" class="hover:text-orange transition-colors">Contact</a></li>
+          <li><a href="#about"   class="hover:text-orange transition-colors">About</a></li>
+          <li><a href="#program" class="hover:text-orange transition-colors">Program</a></li>
+          <li><a href="#gallery" class="hover:text-orange transition-colors">Gallery</a></li>
+          <li><a href="#contact" class="hover:text-orange transition-colors">Contact</a></li>
         </ul>
       </div>
-      <!-- Col 3: Social -->
       <div>
         <h4 class="font-heading text-white text-lg font-bold mb-3">Follow</h4>
         <div class="flex gap-3">
@@ -177,12 +604,59 @@
         </div>
       </div>
     </div>
-    <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-brown-light/20 text-center text-xs font-body text-brown-light/60">
+    <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-brown-light/20 text-center text-xs font-body text-brown-light/50">
       © <span id="year"></span> [PLACEHOLDER: Artist Name]. All rights reserved.
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <!-- ═══════════════════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════════════════════ -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    function closeMobile() { mobileMenu.classList.add('hidden'); }
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        lightboxImg.src = item.dataset.src;
+        lightbox.classList.add('active');
+      });
+    });
+    document.getElementById('lightbox-close').addEventListener('click', () => lightbox.classList.remove('active'));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+
+    // Contact form
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-success').classList.remove('hidden');
+      e.target.reset();
+    }
+
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('#desktop-nav a[href^="#"]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(s => observer.observe(s));
+  </script>
 </body>
 </html>
