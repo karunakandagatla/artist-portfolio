@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — [PLACEHOLDER: Artist Name]</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FEF1E4',
+            orange: { DEFAULT: '#FF6210', hover: '#F15808' },
+            brown: { dark: '#1C0D0A', mid: '#353535', light: '#E5D7D1' },
+          },
+          fontFamily: {
+            heading: ['Philosopher', 'serif'],
+            body: ['"PT Sans"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <style>body { font-family: 'PT Sans', sans-serif; } h1,h2,h3,h4,h5,h6 { font-family: 'Philosopher', serif; }</style>
+</head>
+<body class="bg-cream text-brown-dark">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-heading text-2xl font-bold text-brown-dark tracking-wide">[PLACEHOLDER: Logo / Name]</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="index.html" data-page="index.html" class="hover:text-orange transition-colors">Home</a>
+        <a href="about.html" data-page="about.html" class="hover:text-orange transition-colors">About</a>
+        <a href="guru.html" data-page="guru.html" class="hover:text-orange transition-colors">Guru</a>
+        <a href="artists.html" data-page="artists.html" class="hover:text-orange transition-colors">Artists</a>
+        <a href="program.html" data-page="program.html" class="hover:text-orange transition-colors">Program</a>
+        <a href="know-your-roots.html" data-page="know-your-roots.html" class="hover:text-orange transition-colors">Know Your Roots</a>
+        <a href="gallery.html" data-page="gallery.html" class="hover:text-orange transition-colors">Gallery</a>
+        <a href="contact.html" data-page="contact.html" class="hover:text-orange transition-colors">Contact</a>
+        <a href="#" class="bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors">Livestream</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 cursor-pointer" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-brown-dark"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-brown-light px-6 pb-4">
+      <nav class="flex flex-col gap-3 pt-3 text-sm font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="index.html" class="hover:text-orange transition-colors">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors">Program</a>
+        <a href="know-your-roots.html" class="hover:text-orange transition-colors">Know Your Roots</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors">Contact</a>
+        <a href="#" class="inline-block bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors w-fit">Livestream</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE BANNER -->
+  <section class="relative h-64 flex items-center justify-center overflow-hidden">
+    <img src="https://placehold.co/1600x400/E5D7D1/1C0D0A?text=About" alt="About Banner" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-brown-dark/50"></div>
+    <h1 class="relative z-10 font-heading text-5xl font-bold text-white">About</h1>
+  </section>
+
+  <!-- BIO SECTION -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-14 items-start">
+      <!-- Portrait -->
+      <div class="md:w-2/5 flex-shrink-0">
+        <img
+          src="https://placehold.co/600x750/FEF1E4/1C0D0A?text=Artist+Portrait"
+          alt="Artist Portrait"
+          class="w-full rounded shadow-lg"
+        />
+      </div>
+      <!-- Bio Text -->
+      <div class="md:w-3/5">
+        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">The Artist</p>
+        <h2 class="font-heading text-4xl font-bold text-brown-dark mb-6">[PLACEHOLDER: Artist Name]</h2>
+        <div class="font-body text-brown-mid text-lg leading-relaxed space-y-5">
+          <p>[PLACEHOLDER: Opening paragraph — introduce the artist, their training background, and art form. E.g., "Born and raised in…"]</p>
+          <p>[PLACEHOLDER: Second paragraph — journey in the art form, key milestones, performances, awards.]</p>
+          <p>[PLACEHOLDER: Third paragraph — philosophy, inspirations, or vision for the art form.]</p>
+          <p>[PLACEHOLDER: Fourth paragraph — current pursuits, upcoming events, or teaching activities.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brown-dark text-brown-light py-14 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <h4 class="font-heading text-white text-lg font-bold mb-3">[PLACEHOLDER: Artist Name]</h4>
+        <p class="font-body text-sm leading-relaxed text-brown-light/80">[PLACEHOLDER: Short footer blurb.]</p>
+      </div>
+      <div>
+        <h4 class="font-heading text-white text-lg font-bold mb-3">Quick Links</h4>
+        <ul class="font-body text-sm space-y-2">
+          <li><a href="about.html" class="hover:text-orange transition-colors">About</a></li>
+          <li><a href="program.html" class="hover:text-orange transition-colors">Program</a></li>
+          <li><a href="gallery.html" class="hover:text-orange transition-colors">Gallery</a></li>
+          <li><a href="contact.html" class="hover:text-orange transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading text-white text-lg font-bold mb-3">Follow</h4>
+        <div class="flex gap-3">
+          <a href="#" class="w-10 h-10 rounded-full bg-orange flex items-center justify-center hover:bg-orange-hover transition-colors" aria-label="Instagram">
+            <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-orange flex items-center justify-center hover:bg-orange-hover transition-colors" aria-label="Facebook">
+            <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-orange flex items-center justify-center hover:bg-orange-hover transition-colors" aria-label="YouTube">
+            <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-brown-light/20 text-center text-xs font-body text-brown-light/60">
+      © <span id="year"></span> [PLACEHOLDER: Artist Name]. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
