@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program | Shakthi | Tanvika Karupakula</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FEF1E4',
+            orange: { DEFAULT: '#FF6210', hover: '#F15808' },
+            brown: { dark: '#1C0D0A', mid: '#353535', light: '#E5D7D1' },
+          },
+          fontFamily: {
+            heading: ['Philosopher', 'serif'],
+            body: ['"PT Sans"', 'sans-serif'],
+            devani: ['"Yatra One"', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&family=Yatra+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'PT Sans', sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Philosopher', serif; }
+  </style>
+</head>
+<body class="bg-cream text-brown-dark">
+
+  <!-- ═══════════════════════════════════════════════
+       HEADER / BACK LINK
+  ════════════════════════════════════════════════ -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-body font-bold uppercase tracking-wider text-xs text-brown-mid hover:text-orange transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Home
+      </a>
+      <a href="index.html" class="font-heading text-2xl font-bold text-brown-dark tracking-wide">
+        Tanvika Karupakula
+      </a>
+      <div class="w-24 hidden md:block"></div>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PROGRAM
+  ════════════════════════════════════════════════ -->
+  <section id="program-hero" class="relative h-[50vh] min-h-[420px] w-full overflow-hidden">
+    <img
+      src="assets/images/image.png"
+      alt="Tanvika Karupakula Bharathanatyam program"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-brown-dark/55"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6">
+      <div class="flex items-center justify-center gap-3 font-devani text-sm uppercase tracking-wide mb-5 text-brown-light">
+        <span>Bharathanatyam</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-orange"></span>
+        <span>Arangetram</span>
+      </div>
+      <h2 class="font-heading text-5xl md:text-6xl font-bold mb-5 text-red-600">Program</h2>
+      <p class="font-body text-lg leading-relaxed mb-6 max-w-2xl text-white/90">
+        Tanvika's arangetram is arranged as a traditional Bharathanatyam margam, moving from invocation and pure rhythm into expressive storytelling shaped by <br>Shakthi - The Power Within.
+      </p>
+      <p class="font-body font-bold text-sm uppercase tracking-widest text-white">Saturday, September 5, 2026 &middot; 2:30 PM PDT</p>
+    </div>
+  </section>
+
+  <section class="py-24 px-6 bg-cream">
+    <div class="max-w-5xl mx-auto">
+
+      <!-- Program Sequence -->
+      <div class="space-y-14">
+
+        <!-- 01 -->
+        <article class="flex flex-col md:flex-row gap-8">
+          <div class="font-heading text-6xl font-bold leading-none w-16 flex-shrink-0" style="color:#B00020; opacity:0.25;">01</div>
+          <div class="flex-1 border-l-2 border-brown-light md:border-l-0 pl-6 md:pl-0">
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-4">Pushpanjali & Saraswathi</h3>
+
+            <div class="mb-6">
+              <h4 class="font-heading text-lg font-bold text-brown-dark mb-1">Pushpanjali</h4>
+              <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-body text-brown-mid uppercase tracking-wide mb-2">
+                <span><strong class="text-orange">Ragam</strong> Saraswathi</span>
+                <span><strong class="text-orange">Thalam</strong> Adi</span>
+                <span><strong class="text-orange">Choreography</strong> Guru Smt. Chandna Talluri</span>
+              </div>
+              <p class="font-body text-brown-mid leading-relaxed">A traditional devotional opening item in Bharatanatyam. It serves as an invocation piece asking for the blessings of Goddess Saraswathi—the deity of knowledge, music, arts, wisdom, and learning—before beginning a performance or practice session.</p>
+            </div>
+
+            <div>
+              <h4 class="font-heading text-lg font-bold text-brown-dark mb-1">Saraswathi Kouthvam</h4>
+              <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-body text-brown-mid uppercase tracking-wide mb-2">
+                <span><strong class="text-orange">Ragam</strong> Saraswathi</span>
+                <span><strong class="text-orange">Thalam</strong> Chaturashra Eka (Traditional Kouthvam rhythm structure)
+                </span>
+                <span><strong class="text-orange">Choreography</strong> Guru Smt. Chandna Talluri</span>
+              </div>
+              <p class="font-body text-brown-mid leading-relaxed">A structured rhythmic hymn (Kouthvam) dedicated to Goddess Saraswathi. It weaves together complex rhythmic syllables (jatis) with poetic descriptions praising the Goddess's pure white attire, her Veena, and her ability to dispel the darkness of ignorance.</p>
+            </div>
+          </div>
+          <div class="md:w-52 flex-shrink-0">
+            <img src="https://placehold.co/500x360/E5D7D1/1C0D0A?text=Mallari+%26+Sita+Kauthuvam" alt="Mallari and Sita Kauthuvam" loading="lazy" class="w-full h-40 object-cover rounded shadow-sm" />
+          </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="flex flex-col md:flex-row gap-8">
+          <div class="font-heading text-6xl font-bold leading-none w-16 flex-shrink-0" style="color:#B00020; opacity:0.25;">02</div>
+          <div class="flex-1 border-l-2 border-brown-light md:border-l-0 pl-6 md:pl-0">
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-2">Jathiswaram</h3>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-body text-brown-mid uppercase tracking-wide mb-2">
+              <span><strong class="text-orange">Ragam</strong> Saveri</span>
+              <span><strong class="text-orange">Thalam</strong> Rupakam</span>
+              <span><strong class="text-orange">Choreography</strong> Kalakshetra</span>
+            </div>
+            <p class="font-body text-brown-mid leading-relaxed">A vibrant example of Nrtta, or pure technical dance, featuring no lyrics or storytelling. Instead, the dancer interweaves complex rhythmic patterns, jathis, with melodic vocal notes, swaras. Set to the beautiful, classic Saveri ragam, it demands incredible precision, stamina, and seamless spatial transitions.</p>
+          </div>
+          <div class="md:w-52 flex-shrink-0">
+            <img src="https://placehold.co/500x360/FEF1E4/1C0D0A?text=Jathiswaram" alt="Jathiswaram" loading="lazy" class="w-full h-40 object-cover rounded shadow-sm" />
+          </div>
+        </article>
+
+        <!-- 03 -->
+        <article class="flex flex-col md:flex-row gap-8">
+          <div class="font-heading text-6xl font-bold leading-none w-16 flex-shrink-0" style="color:#B00020; opacity:0.25;">03</div>
+          <div class="flex-1 border-l-2 border-brown-light md:border-l-0 pl-6 md:pl-0">
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-2">Hanuman Shabdam</h3>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-body text-brown-mid uppercase tracking-wide mb-2">
+              <span><strong class="text-orange">Ragam</strong> Ragamalika</span>
+              <span><strong class="text-orange">Thalam</strong> Misra Chapu</span>
+              <span><strong class="text-orange">Choreography</strong> Guru Smt. Chandna Talluri</span>
+            </div>
+            <p class="font-body text-brown-mid leading-relaxed">A narrative piece that serves as a bridge into the art of Abhinaya, or expression. Through rhythmic intervals and expressive poetry, the dancer brings to life the unwavering devotion, immense strength, and heroic exploits of Lord Hanuman, showcasing his deep surrender at the feet of Lord Rama.</p>
+          </div>
+          <div class="md:w-52 flex-shrink-0">
+            <img src="https://placehold.co/500x360/E5D7D1/1C0D0A?text=Hanuman+Shabdam" alt="Hanuman Shabdam" loading="lazy" class="w-full h-40 object-cover rounded shadow-sm" />
+          </div>
+        </article>
+
+        <!-- 04 -->
+        <article class="flex flex-col md:flex-row gap-8">
+          <div class="font-heading text-6xl font-bold leading-none w-16 flex-shrink-0" style="color:#B00020; opacity:0.25;">04</div>
+          <div class="flex-1 border-l-2 border-brown-light md:border-l-0 pl-6 md:pl-0">
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-2">Varnam (Dasaratha Nandana)</h3>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-body text-brown-mid uppercase tracking-wide mb-2">
+              <span><strong class="text-orange">Ragam</strong> Ragamalika</span>
+              <span><strong class="text-orange">Thalam</strong> Adi</span>
+              <span><strong class="text-orange">Choreography</strong> Guru Smt. Chandna Talluri</span>
+            </div>
+            <p class="font-body text-brown-mid leading-relaxed">This spectacular Varnam brings to life the complete journey of Lord Rama, translating the timeless verses of the Ramayana into the expressive language of dance and rhythm. It is a magnificent, visual chronicle of a life defined by Dharma, or righteousness, taking the audience on an unforgettable journey from a tender infancy to supreme kingship.</p>
+          </div>
+          <div class="md:w-52 flex-shrink-0">
+            <img src="https://placehold.co/500x360/FEF1E4/1C0D0A?text=Varnam" alt="Varnam Dasaratha Nandana" loading="lazy" class="w-full h-40 object-cover rounded shadow-sm" />
+          </div>
+        </article>
+
+        <!-- Interval -->
+        <div class="flex items-center gap-4 py-2">
+          <div class="flex-1 h-px bg-brown-light"></div>
+          <p class="font-devani text-2xl tracking-widest" style="color:#B00020;">Interval</p>
+          <div class="flex-1 h-px bg-brown-light"></div>
+        </div>
+
+        <!-- 05 -->
+        <article class="flex flex-col md:flex-row gap-8">
+          <div class="font-heading text-6xl font-bold leading-none w-16 flex-shrink-0" style="color:#B00020; opacity:0.25;">05</div>
+          <div class="flex-1 border-l-2 border-brown-light md:border-l-0 pl-6 md:pl-0">
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-2">Rama Gaava</h3>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-body text-brown-mid uppercase tracking-wide mb-2">
+              <span><strong class="text-orange">Ragam</strong> Mand</span>
+              <span><strong class="text-orange">Thalam</strong> Adi</span>
+              <span><strong class="text-orange">Choreography</strong> Guru Smt. Chandna Talluri</span>
+            </div>
+            <p class="font-body text-brown-mid leading-relaxed">Shifting into the celebratory mood of a traditional Bhajan, this piece fills the auditorium with joyous, soulful devotion. The lively lyrics invite the entire congregation to join in singing the praises of Lord Rama, capturing the sweet energy of unconditional love, or bhakti.</p>
+          </div>
+          <div class="md:w-52 flex-shrink-0">
+            <img src="https://placehold.co/500x360/E5D7D1/1C0D0A?text=Rama+Gaava" alt="Rama Gaava" loading="lazy" class="w-full h-40 object-cover rounded shadow-sm" />
+          </div>
+        </article>
+
+        <!-- 06 -->
+        <article class="flex flex-col md:flex-row gap-8">
+          <div class="font-heading text-6xl font-bold leading-none w-16 flex-shrink-0" style="color:#B00020; opacity:0.25;">06</div>
+          <div class="flex-1 border-l-2 border-brown-light md:border-l-0 pl-6 md:pl-0">
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-2">Katama Rayuda (Betrayi Sami Devuda)</h3>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-body text-brown-mid uppercase tracking-wide mb-2">
+              <span><strong class="text-orange">Ragam</strong> Traditional Folk tune</span>
+              <span><strong class="text-orange">Thalam</strong> Tisra nadai</span>
+              <span><strong class="text-orange">Choreography</strong> Guru Smt. Chandna Talluri</span>
+            </div>
+            <p class="font-body text-brown-mid leading-relaxed">A lively, popular Telugu composition that celebrates a deeply protective, localized avatar, Kadiri Narasimha, of the divine. Blending semi-classical folk steps with expressive, spirited storytelling of the dashavatharas, it brings a cheerful, energetic bounce to the stage that highlights the playful, celebratory side of classical expression.</p>
+          </div>
+          <div class="md:w-52 flex-shrink-0">
+            <img src="https://placehold.co/500x360/FEF1E4/1C0D0A?text=Katama+Rayuda" alt="Katama Rayuda" loading="lazy" class="w-full h-40 object-cover rounded shadow-sm" />
+          </div>
+        </article>
+
+        <!-- 07 -->
+        <article class="flex flex-col md:flex-row gap-8">
+          <div class="font-heading text-6xl font-bold leading-none w-16 flex-shrink-0" style="color:#B00020; opacity:0.25;">07</div>
+          <div class="flex-1 border-l-2 border-brown-light md:border-l-0 pl-6 md:pl-0">
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-2">Navarasa Rama Keertanam</h3>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-body text-brown-mid uppercase tracking-wide mb-2">
+              <span><strong class="text-orange">Ragam</strong> Ragamalika</span>
+              <span><strong class="text-orange">Thalam</strong> Adi</span>
+              <span><strong class="text-orange">Choreography</strong> Guru Smt. Chandna Talluri</span>
+            </div>
+            <p class="font-body text-brown-mid leading-relaxed">A tour de force of dramatic storytelling. This brilliant composition traces the epic story of the Ramayana by showcasing the Navarasas, the nine fundamental human emotions, manifested through the life of Lord Rama. The dancer instantly shifts facial expressions and body language to portray love, mirth, compassion, anger, valor, fear, disgust, wonder, and ultimate tranquility.</p>
+          </div>
+          <div class="md:w-52 flex-shrink-0">
+            <img src="https://placehold.co/500x360/E5D7D1/1C0D0A?text=Navarasa+Rama+Keertanam" alt="Navarasa Rama Keertanam" loading="lazy" class="w-full h-40 object-cover rounded shadow-sm" />
+          </div>
+        </article>
+
+        <!-- 08 -->
+        <article class="flex flex-col md:flex-row gap-8">
+          <div class="font-heading text-6xl font-bold leading-none w-16 flex-shrink-0" style="color:#B00020; opacity:0.25;">08</div>
+          <div class="flex-1 border-l-2 border-brown-light md:border-l-0 pl-6 md:pl-0">
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-2">Thillana</h3>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-body text-brown-mid uppercase tracking-wide mb-2">
+              <span><strong class="text-orange">Ragam</strong> Sindu Bhairavi</span>
+              <span><strong class="text-orange">Thalam</strong> Adi</span>
+              <span><strong class="text-orange">Choreography</strong> Guru Smt. Chandna Talluri</span>
+            </div>
+            <p class="font-body text-brown-mid leading-relaxed">The joyous, fast-paced climax of the dance recital. Thillana in Bharatanatyam is a vibrant, rhythmic, and joyful finale piece that showcases the dancer's precision, energy, and expressive brilliance. This specific composition concludes with a beautiful lyrical salute dedicated to the virtues of Lord Rama.</p>
+          </div>
+          <div class="md:w-52 flex-shrink-0">
+            <img src="https://placehold.co/500x360/FEF1E4/1C0D0A?text=Thillana" alt="Thillana" loading="lazy" class="w-full h-40 object-cover rounded shadow-sm" />
+          </div>
+        </article>
+
+        <!-- 09 -->
+        <article class="flex flex-col md:flex-row gap-8">
+          <div class="font-heading text-6xl font-bold leading-none w-16 flex-shrink-0" style="color:#B00020; opacity:0.25;">09</div>
+          <div class="flex-1 border-l-2 border-brown-light md:border-l-0 pl-6 md:pl-0">
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-2">Mangalam</h3>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-body text-brown-mid uppercase tracking-wide mb-2">
+              <span><strong class="text-orange">Ragam</strong> Madhyamavati / Saurashtram</span>
+              <span><strong class="text-orange">Thalam</strong> Adi</span>
+              <span><strong class="text-orange">Choreography</strong> Guru Smt. Chandna Talluri</span>
+            </div>
+            <p class="font-body text-brown-mid leading-relaxed">The formal concluding piece of the dance line-up. The dancer performs a final gesture of deep gratitude, seeking forgiveness for any unintended errors during the performance and offering blessings of peace, prosperity, and harmony to the musicians, the Guru, the audience, and the universe.</p>
+          </div>
+          <div class="md:w-52 flex-shrink-0">
+            <img src="https://placehold.co/500x360/E5D7D1/1C0D0A?text=Mangalam" alt="Mangalam" loading="lazy" class="w-full h-40 object-cover rounded shadow-sm" />
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Bottom back link -->
+      <div class="text-center mt-20">
+        <a href="index.html" class="inline-flex items-center gap-2 font-body font-bold uppercase tracking-wider text-sm text-brown-mid hover:text-orange transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Home
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════ -->
+  <footer class="bg-brown-dark text-brown-light py-16 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+
+      <!-- Brand -->
+      <p class="font-heading text-4xl font-bold text-white tracking-wide">Shakthi</p>
+      <p class="font-body text-xs uppercase tracking-[0.35em] text-brown-light/70 mt-3">
+        The Power Within
+      </p>
+
+      <!-- Links -->
+      <nav class="flex flex-wrap justify-center gap-x-7 gap-y-3 mt-10 font-body text-sm">
+        <a href="index.html#hero" class="hover:text-orange transition-colors">Home</a>
+        <a href="index.html#about" class="hover:text-orange transition-colors">About</a>
+        <a href="index.html#guru" class="hover:text-orange transition-colors">Guru</a>
+        <a href="index.html#artists" class="hover:text-orange transition-colors">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors">Program</a>
+        <a href="index.html#roots" class="hover:text-orange transition-colors">Know Your Roots</a>
+        <a href="index.html#gallery" class="hover:text-orange transition-colors">Gallery</a>
+        <a href="index.html#contact" class="hover:text-orange transition-colors">Contact</a>
+        <a href="#" class="hover:text-orange transition-colors">Livestream</a>
+      </nav>
+
+      <!-- Copyright -->
+      <div class="mt-10 pt-6 border-t border-brown-light/20 text-xs font-body text-brown-light/50">
+        &copy; <span id="year"></span> Tanvika Karupakula Bharathanatyam Arangetram. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════════════════════ -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

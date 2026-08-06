@@ -17,12 +17,14 @@
           fontFamily: {
             heading: ['Philosopher', 'serif'],
             body: ['"PT Sans"', 'sans-serif'],
+            devani: ['"Yatra One"', 'cursive'],
           },
         }
       }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&family=Yatra+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'PT Sans', sans-serif; }
@@ -58,7 +60,7 @@
         <a href="#about"    class="hover:text-orange transition-colors pb-0.5">About</a>
         <a href="#guru"     class="hover:text-orange transition-colors pb-0.5">Guru</a>
         <a href="#artists"  class="hover:text-orange transition-colors pb-0.5">Artists</a>
-        <a href="#program"  class="hover:text-orange transition-colors pb-0.5">Program</a>
+        <a href="program.html" class="hover:text-orange transition-colors pb-0.5">Program</a>
         <a href="#roots"    class="hover:text-orange transition-colors pb-0.5">Know Your Roots</a>
         <a href="#gallery"  class="hover:text-orange transition-colors pb-0.5">Gallery</a>
         <a href="#contact"  class="hover:text-orange transition-colors pb-0.5">Contact</a>
@@ -79,7 +81,7 @@
         <a href="#about"   class="hover:text-orange transition-colors" onclick="closeMobile()">About</a>
         <a href="#guru"    class="hover:text-orange transition-colors" onclick="closeMobile()">Guru</a>
         <a href="#artists" class="hover:text-orange transition-colors" onclick="closeMobile()">Artists</a>
-        <a href="#program" class="hover:text-orange transition-colors" onclick="closeMobile()">Program</a>
+        <a href="program.html" class="hover:text-orange transition-colors">Program</a>
         <a href="#roots"   class="hover:text-orange transition-colors" onclick="closeMobile()">Know Your Roots</a>
         <a href="#gallery" class="hover:text-orange transition-colors" onclick="closeMobile()">Gallery</a>
         <a href="#contact" class="hover:text-orange transition-colors" onclick="closeMobile()">Contact</a>
@@ -92,25 +94,33 @@
   <!-- ═══════════════════════════════════════════════
        HERO
   ════════════════════════════════════════════════ -->
-  <section id="hero" class="relative h-screen min-h-[560px] flex items-center justify-center overflow-hidden">
+  <section id="hero" class="relative h-screen min-h-[560px] flex items-center overflow-hidden">
     <img
-      src="https://placehold.co/1600x900/E5D7D1/1C0D0A?text=Hero+Image"
-      alt="Hero"
+      src="assets/images/AG_Hero_img.png"
+      alt="Tanvika Karupakula performing Bharathanatyam"
       class="absolute inset-0 w-full h-full object-cover"
     />
     <div class="absolute inset-0 bg-brown-dark/45"></div>
-    <div class="relative z-10 text-center text-white px-6 max-w-3xl mx-auto">
-      <p class="font-body uppercase tracking-[0.35em] text-xs mb-5 text-brown-light">
-        Shakthi · The Power Within
+    <div class="relative z-10 w-full md:w-2/3 flex flex-col items-center text-center text-white px-6">
+      <p class=" tracking-[0.35em] text-lg md:text-xl max-w-xl mx-auto mb-5 text-brown-light font-serif italic">
+        <span>Shakthi</span> The Power Within
       </p>
-      <h1 class="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight">
+      <h1 id="name" class="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight " style="color: #b90019;">
         Tanvika Karupakula
       </h1>
-      <p class="font-body text-lg md:text-xl max-w-xl mx-auto mb-10 text-brown-light/90">
+      <p id="subtitle" class=" tracking-[0.35em] text-lg md:text-xl max-w-xl mx-auto mb-5 text-brown-light font-serif italic">
         A Bharathanatyam journey through the power within
       </p>
-      <a href="#about" class="inline-block bg-orange text-white px-8 py-3 text-sm font-bold uppercase tracking-wider hover:bg-orange-hover transition-colors rounded">
-        Explore
+
+      <div class="w-48 md:w-64 h-px bg-white mb-2"></div>
+
+      <div class="font-body text-white mb-8 w-full text-center space-y-0.5">
+        <p class="text-sm font-bold tracking-wide whitespace-nowrap">Sat 5 Sept &middot; 2:30 PM PDT</p>
+        <p class="text-xs text-white/90 whitespace-nowrap">Dublin High School, 8151 Village Pkwy, Dublin, CA, 94568</p>
+      </div>
+
+      <a id="rsvp" href="https://evite.me/BBvuNtuDCg" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#E0102B] hover:bg-[#B80D22] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-colors rounded-full ring-2 ring-inset ring-[#FAF3E8] ring-offset-2 ring-offset-[#E0102B] hover:ring-offset-[#B80D22]">
+        Please RSVP
       </a>
     </div>
     <!-- Scroll cue -->
@@ -123,34 +133,26 @@
   <!-- ═══════════════════════════════════════════════
        FEATURED EVENT BAND
   ════════════════════════════════════════════════ -->
-  <section class="py-20 px-6 bg-white">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-      <div class="md:w-1/2">
+  <section class="py-20 px-6 bg-orange-100">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+      <div class="w-full md:w-1/2">
         <img
-          src="https://placehold.co/700x500/FEF1E4/1C0D0A?text=Featured+Event"
-          alt="Featured Event"
-          class="w-full rounded shadow-md"
+          src="assets/images/arangetram_p2.png"
+          alt="Arangetram performance"
+          class="w-full h-[450px] md:h-[650px] object-cover"
         />
       </div>
-      <div class="md:w-1/2">
-        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-3">
-          Arangetram
+      <div class="w-full md:w-1/2 text-center">
+        <p class="font-devani text-2xl mb-3" style="color: #B00020;">
+          What is Arangetram?
         </p>
-        <p class="inline-block font-heading text-2xl md:text-3xl font-bold italic text-brown-dark bg-orange/15 border-l-4 border-orange px-4 py-2 mb-5">
-          Shakthi - The Power Within
+        <div class="w-32 md:w-40 h-0.5 mx-auto mb-6" style="background-color: #B00020;"></div>
+        <p class="font-serif italic text-lg leading-relaxed text-brown-mid mb-5">
+          Arangetram is a Tamil word that means "ascending the stage." It is the traditional debut performance where a dancer offers years of learning, discipline, and devotion before the Guru, family, friends, and well-wishers.
         </p>
-        <h2 class="font-heading text-4xl font-bold text-brown-dark mb-4 leading-snug">
-          [PLACEHOLDER: Event Title]
-        </h2>
-        <p class="font-body text-brown-mid text-base mb-4">
-          [PLACEHOLDER: Date · Venue]
+        <p class="font-serif italic text-lg leading-relaxed text-brown-mid">
+          For Tanvika, this milestone is presented as Shakthi - The Power Within: a Bharatanatyam offering celebrating the divine feminine energy of the Goddess, awakening and embodying that limitless power from within herself.
         </p>
-        <p class="font-body text-brown-mid leading-relaxed mb-8">
-          [PLACEHOLDER: 2–3 sentences about the featured performance or upcoming event.]
-        </p>
-        <a href="#program" class="inline-block bg-orange text-white px-6 py-3 text-sm font-bold uppercase tracking-wider hover:bg-orange-hover transition-colors rounded">
-          View Program
-        </a>
       </div>
     </div>
   </section>
@@ -159,7 +161,7 @@
   <!-- ═══════════════════════════════════════════════
        ABOUT
   ════════════════════════════════════════════════ -->
-  <section id="about" class="py-24 px-6 bg-cream">
+  <!-- <section id="about" class="py-24 px-6 bg-cream">
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-14 items-start">
       <div class="md:w-2/5 flex-shrink-0">
         <img
@@ -179,13 +181,13 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
   <!-- ═══════════════════════════════════════════════
        QUOTE BAND
   ════════════════════════════════════════════════ -->
-  <section class="bg-brown-dark py-16 px-6 text-center">
+  <!-- <section class="bg-brown-dark py-16 px-6 text-center">
     <div class="max-w-3xl mx-auto">
       <h2 class="font-heading text-3xl md:text-4xl italic text-white mb-4">
         "[PLACEHOLDER: Inspirational quote about the art form]"
@@ -194,7 +196,7 @@
         — [PLACEHOLDER: Attribution]
       </p>
     </div>
-  </section>
+  </section> -->
 
 
   <!-- ═══════════════════════════════════════════════
@@ -336,108 +338,9 @@
 
 
   <!-- ═══════════════════════════════════════════════
-       PROGRAM
-  ════════════════════════════════════════════════ -->
-  <section id="program" class="py-24 px-6 bg-white">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-14">
-        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">Bharathanatyam Arangetram</p>
-        <h2 class="font-heading text-4xl font-bold text-brown-dark">Program</h2>
-        <p class="font-body text-brown-mid text-lg max-w-2xl mx-auto mt-4 leading-relaxed">
-          Tanvika's arangetram is arranged as a traditional Bharathanatyam margam, moving from
-          invocation and pure rhythm into expressive storytelling shaped by
-          Shakthi - The Power Within.
-        </p>
-      </div>
-
-      <div class="space-y-10">
-
-        <div class="border-l-4 border-orange pl-6">
-          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">01</p>
-          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">Mallari & Sita Kauthuvam</h3>
-        </div>
-
-        <div class="border-l-4 border-brown-light pl-6 ml-6">
-          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">Mallari</h3>
-          <p class="font-body text-brown-mid text-sm italic mb-3">Ragam Gambheera Nattai &middot; Thalam Adi &middot; Choreography Guru Smt. Chandna Talluri</p>
-          <p class="font-body text-brown-mid leading-relaxed">A grand, traditional invocation piece rooted in South Indian temple processions. Originally played on the Nadaswaram as the deity emerged from the sanctum sanctorum, Mallari features powerful geometric lines and crisp footwork executed in progressive speeds. In today's choreography, the sacred temple courtyard comes alive on stage as Tanvika welcomes the grand, royal procession of Lord Rama and Goddess Sita.</p>
-        </div>
-
-        <div class="border-l-4 border-brown-light pl-6 ml-6">
-          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">Sita Kauthuvam</h3>
-          <p class="font-body text-brown-mid text-sm italic mb-3">Ragam Vaasanthi &middot; Thalam Mishra Chapu &middot; Choreography Guru Smt. Chandna Talluri</p>
-          <p class="font-body text-brown-mid leading-relaxed">A classical hymn of praise celebrating the virtues, grace, and divine beauty of Goddess Sita. Combining energetic rhythmic syllables with expressive narrative elements, or abhinaya, this piece depicts the inner strength and absolute devotion of Sita, honoring her as the epitome of grace.</p>
-        </div>
-
-        <div class="border-l-4 border-orange pl-6">
-          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">02</p>
-          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">Jathiswaram</h3>
-          <p class="font-body text-brown-mid text-sm italic mb-3">Ragam Saveri &middot; Thalam Rupakam &middot; Choreography Kalakshetra</p>
-          <p class="font-body text-brown-mid leading-relaxed">A vibrant example of Nrtta, or pure technical dance, featuring no lyrics or storytelling. Instead, the dancer interweaves complex rhythmic patterns, jathis, with melodic vocal notes, swaras. Set to the beautiful, classic Saveri ragam, it demands incredible precision, stamina, and seamless spatial transitions.</p>
-        </div>
-
-        <div class="border-l-4 border-orange pl-6">
-          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">03</p>
-          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">Hanuman Shabdam</h3>
-          <p class="font-body text-brown-mid text-sm italic mb-3">Ragam Ragamalika &middot; Thalam Misra Chapu &middot; Choreography Guru Smt. Chandna Talluri</p>
-          <p class="font-body text-brown-mid leading-relaxed">A narrative piece that serves as a bridge into the art of Abhinaya, or expression. Through rhythmic intervals and expressive poetry, the dancer brings to life the unwavering devotion, immense strength, and heroic exploits of Lord Hanuman, showcasing his deep surrender at the feet of Lord Rama.</p>
-        </div>
-
-        <div class="border-l-4 border-orange pl-6">
-          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">04</p>
-          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">Varnam (Dasaratha Nandana)</h3>
-          <p class="font-body text-brown-mid text-sm italic mb-3">Ragam Ragamalika &middot; Thalam Adi &middot; Choreography Guru Smt. Chandna Talluri</p>
-          <p class="font-body text-brown-mid leading-relaxed">This spectacular Varnam brings to life the complete journey of Lord Rama, translating the timeless verses of the Ramayana into the expressive language of dance and rhythm. It is a magnificent, visual chronicle of a life defined by Dharma, or righteousness, taking the audience on an unforgettable journey from a tender infancy to supreme kingship.</p>
-        </div>
-
-        <div class="text-center py-4">
-          <p class="font-heading text-2xl italic text-brown-mid tracking-widest">Interval</p>
-        </div>
-
-        <div class="border-l-4 border-orange pl-6">
-          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">05</p>
-          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">Rama Gaava</h3>
-          <p class="font-body text-brown-mid text-sm italic mb-3">Ragam Mand &middot; Thalam Adi &middot; Choreography Guru Smt. Chandna Talluri</p>
-          <p class="font-body text-brown-mid leading-relaxed">Shifting into the celebratory mood of a traditional Bhajan, this piece fills the auditorium with joyous, soulful devotion. The lively lyrics invite the entire congregation to join in singing the praises of Lord Rama, capturing the sweet energy of unconditional love, or bhakti.</p>
-        </div>
-
-        <div class="border-l-4 border-orange pl-6">
-          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">06</p>
-          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">Katama Rayuda (Betrayi Sami Devuda)</h3>
-          <p class="font-body text-brown-mid text-sm italic mb-3">Ragam Traditional Folk tune &middot; Thalam Tisra nadai &middot; Choreography Guru Smt. Chandna Talluri</p>
-          <p class="font-body text-brown-mid leading-relaxed">A lively, popular Telugu composition that celebrates a deeply protective, localized avatar, Kadiri Narasimha, of the divine. Blending semi-classical folk steps with expressive, spirited storytelling of the dashavatharas, it brings a cheerful, energetic bounce to the stage that highlights the playful, celebratory side of classical expression.</p>
-        </div>
-
-        <div class="border-l-4 border-orange pl-6">
-          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">07</p>
-          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">Navarasa Rama Keertanam</h3>
-          <p class="font-body text-brown-mid text-sm italic mb-3">Ragam Ragamalika &middot; Thalam Adi &middot; Choreography Guru Smt. Chandna Talluri</p>
-          <p class="font-body text-brown-mid leading-relaxed">A tour de force of dramatic storytelling. This brilliant composition traces the epic story of the Ramayana by showcasing the Navarasas, the nine fundamental human emotions, manifested through the life of Lord Rama. The dancer instantly shifts facial expressions and body language to portray love, mirth, compassion, anger, valor, fear, disgust, wonder, and ultimate tranquility.</p>
-        </div>
-
-        <div class="border-l-4 border-orange pl-6">
-          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">08</p>
-          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">Thillana</h3>
-          <p class="font-body text-brown-mid text-sm italic mb-3">Ragam Sindu Bhairavi &middot; Thalam Adi &middot; Choreography Guru Smt. Chandna Talluri</p>
-          <p class="font-body text-brown-mid leading-relaxed">The joyous, fast-paced climax of the dance recital. Thillana in Bharatanatyam is a vibrant, rhythmic, and joyful finale piece that showcases the dancer's precision, energy, and expressive brilliance. This specific composition concludes with a beautiful lyrical salute dedicated to the virtues of Lord Rama.</p>
-        </div>
-
-        <div class="border-l-4 border-orange pl-6">
-          <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">09</p>
-          <h3 class="font-heading text-2xl font-bold text-brown-dark mb-1">Mangalam</h3>
-          <p class="font-body text-brown-mid text-sm italic mb-3">Ragam Madhyamavati / Saurashtram &middot; Thalam Adi &middot; Choreography Guru Smt. Chandna Talluri</p>
-          <p class="font-body text-brown-mid leading-relaxed">The formal concluding piece of the dance line-up. The dancer performs a final gesture of deep gratitude, seeking forgiveness for any unintended errors during the performance and offering blessings of peace, prosperity, and harmony to the musicians, the Guru, the audience, and the universe.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════
        KNOW YOUR ROOTS
   ════════════════════════════════════════════════ -->
-  <section id="roots" class="py-24 px-6 bg-cream">
+  <!-- <section id="roots" class="py-24 px-6 bg-cream">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-14">
         <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">Education</p>
@@ -481,7 +384,7 @@
 
       </div>
     </div>
-  </section>
+  </section> -->
 
 
   <!-- ═══════════════════════════════════════════════
@@ -498,41 +401,47 @@
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+1">
-          <img src="https://placehold.co/400x400/E5D7D1/1C0D0A?text=Photo+1" alt="Photo 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-150.jpg">
+          <img src="assets/images/gallary/TA-150.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/FEF1E4/1C0D0A?text=Photo+2">
-          <img src="https://placehold.co/400x400/FEF1E4/1C0D0A?text=Photo+2" alt="Photo 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-131.jpg">
+          <img src="assets/images/gallary/TA-131.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square col-span-2 row-span-2" data-src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+3">
-          <img src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+3" alt="Photo 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square col-span-2 row-span-2" data-src="assets/images/gallary/TA-88.jpg">
+          <img src="assets/images/gallary/TA-88.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/FEF1E4/1C0D0A?text=Photo+4">
-          <img src="https://placehold.co/400x400/FEF1E4/1C0D0A?text=Photo+4" alt="Photo 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-139.jpg">
+          <img src="assets/images/gallary/TA-139.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+5">
-          <img src="https://placehold.co/400x400/E5D7D1/1C0D0A?text=Photo+5" alt="Photo 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-149.jpg">
+          <img src="assets/images/gallary/TA-149.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/FEF1E4/1C0D0A?text=Photo+6">
-          <img src="https://placehold.co/400x400/FEF1E4/1C0D0A?text=Photo+6" alt="Photo 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-127.jpg">
+          <img src="assets/images/gallary/TA-127.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+7">
-          <img src="https://placehold.co/400x400/E5D7D1/1C0D0A?text=Photo+7" alt="Photo 7" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-143.jpg">
+          <img src="assets/images/gallary/TA-143.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/FEF1E4/1C0D0A?text=Photo+8">
-          <img src="https://placehold.co/400x400/FEF1E4/1C0D0A?text=Photo+8" alt="Photo 8" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-138.jpg">
+          <img src="assets/images/gallary/TA-138.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+9">
-          <img src="https://placehold.co/400x400/E5D7D1/1C0D0A?text=Photo+9" alt="Photo 9" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-148.jpg">
+          <img src="assets/images/gallary/TA-148.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/FEF1E4/1C0D0A?text=Photo+10">
-          <img src="https://placehold.co/400x400/FEF1E4/1C0D0A?text=Photo+10" alt="Photo 10" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-39.jpg">
+          <img src="assets/images/gallary/TA-39.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/E5D7D1/1C0D0A?text=Photo+11">
-          <img src="https://placehold.co/400x400/E5D7D1/1C0D0A?text=Photo+11" alt="Photo 11" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-135.jpg">
+          <img src="assets/images/gallary/TA-135.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
         </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="https://placehold.co/800x800/FEF1E4/1C0D0A?text=Photo+12">
-          <img src="https://placehold.co/400x400/FEF1E4/1C0D0A?text=Photo+12" alt="Photo 12" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-152.jpg">
+          <img src="assets/images/gallary/TA-152.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-145.jpg">
+          <img src="assets/images/gallary/TA-145.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-106.jpg">
+          <img src="assets/images/gallary/TA-106.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
         </div>
       </div>
     </div>
@@ -654,7 +563,7 @@
         <a href="#about" class="hover:text-orange transition-colors">About</a>
         <a href="#guru" class="hover:text-orange transition-colors">Guru</a>
         <a href="#artists" class="hover:text-orange transition-colors">Artists</a>
-        <a href="#program" class="hover:text-orange transition-colors">Program</a>
+        <a href="program.html" class="hover:text-orange transition-colors">Program</a>
         <a href="#roots" class="hover:text-orange transition-colors">Know Your Roots</a>
         <a href="#gallery" class="hover:text-orange transition-colors">Gallery</a>
         <a href="#contact" class="hover:text-orange transition-colors">Contact</a>
@@ -720,3 +629,7 @@
   </script>
 </body>
 </html>
+
+
+
+<!-- 22 - center, 23, 25, 52, 56, 58, 97, 98, 103 -->
