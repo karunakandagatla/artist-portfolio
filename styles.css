@@ -1,1 +1,16 @@
-@import url('https://googleapis.com');
+.desc-text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #353535;
+}
+
+.desc-text-sm {
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+
+.desc-text-light {
+  color: rgba(255, 255, 255, 0.9);
+}
