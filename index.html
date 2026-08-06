@@ -61,7 +61,7 @@
         <a href="#guru"     class="hover:text-orange transition-colors pb-0.5">Guru</a>
         <a href="#artists"  class="hover:text-orange transition-colors pb-0.5">Artists</a>
         <a href="program.html" class="hover:text-orange transition-colors pb-0.5">Program</a>
-        <a href="#roots"    class="hover:text-orange transition-colors pb-0.5">Know Your Roots</a>
+        <!-- <a href="#roots"    class="hover:text-orange transition-colors pb-0.5">Know Your Roots</a> -->
         <a href="#gallery"  class="hover:text-orange transition-colors pb-0.5">Gallery</a>
         <a href="#contact"  class="hover:text-orange transition-colors pb-0.5">Contact</a>
         <a href="#" class="bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors ml-2">Livestream</a>
@@ -109,7 +109,7 @@
         Tanvika Karupakula
       </h1>
       <p id="subtitle" class=" tracking-[0.35em] text-lg md:text-xl max-w-xl mx-auto mb-5 text-brown-light font-serif italic">
-        A Bharathanatyam journey through the power within
+        A Bharatanatyam journey exploring the Shakti - The Power Within
       </p>
 
       <div class="w-48 md:w-64 h-px bg-white mb-2"></div>
@@ -396,7 +396,7 @@
         <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">Photography</p>
         <h2 class="font-heading text-4xl font-bold text-brown-dark">Gallery</h2>
         <p class="font-body text-brown-mid text-lg max-w-2xl mx-auto mt-4">
-          [PLACEHOLDER: Gallery intro — e.g. "Moments captured from performances and rehearsals."]
+          Moments captured from performances and rehearsals.
         </p>
       </div>
 
@@ -469,7 +469,7 @@
         <!-- Info -->
         <div>
           <p class="font-body text-brown-mid text-lg leading-relaxed mb-10">
-            [PLACEHOLDER: Contact intro — e.g. "For inquiries about performances, collaborations, or media, reach out below."]
+            For inquiries about performances, collaborations, or media, reach out below.
           </p>
           <div class="space-y-6 font-body text-brown-mid">
             <div class="flex items-start gap-4">
@@ -478,7 +478,7 @@
               </div>
               <div>
                 <p class="font-bold text-brown-dark text-xs uppercase tracking-wider mb-1">Email</p>
-                <a href="mailto:placeholder@example.com" class="hover:text-orange transition-colors">[PLACEHOLDER: email@example.com]</a>
+                <a href="mailto:karuna.kandagatla@gmail.com" class="hover:text-orange transition-colors">karuna.kandagatla@gmail.com</a>
               </div>
             </div>
             <div class="flex items-start gap-4">
@@ -487,7 +487,7 @@
               </div>
               <div>
                 <p class="font-bold text-brown-dark text-xs uppercase tracking-wider mb-1">Location</p>
-                <p>[PLACEHOLDER: City, State / Country]</p>
+                <p>Dublin High School, 8151 Village Pkwy, Dublin, CA, 94568</p>
               </div>
             </div>
           </div>
@@ -509,7 +509,8 @@
 
         <!-- Form -->
         <div>
-          <form class="space-y-5" onsubmit="handleSubmit(event)">
+          <!-- Powered by Formspree: https://formspree.io — sends submissions straight to karuna.kandagatla@gmail.com -->
+          <form id="contact-form" class="space-y-5" action="https://formspree.io/f/xvkpovne" method="POST">
             <div>
               <label for="name" class="block font-body font-bold text-brown-dark text-xs uppercase tracking-wider mb-2">Name</label>
               <input type="text" id="name" name="name" required placeholder="Your name"
@@ -530,12 +531,18 @@
               <textarea id="message" name="message" rows="6" required placeholder="Your message…"
                 class="w-full border border-brown-light bg-white px-4 py-3 font-body text-brown-dark placeholder-brown-light/70 rounded focus:border-orange transition-colors resize-none"></textarea>
             </div>
-            <button type="submit"
-              class="w-full bg-orange text-white font-body font-bold uppercase tracking-wider py-3 rounded hover:bg-orange-hover transition-colors">
+            <!-- Honeypot field to deter spam bots (hidden from real users) -->
+            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+            <button type="submit" id="form-submit-btn"
+              class="w-full bg-orange text-white font-body font-bold uppercase tracking-wider py-3 rounded hover:bg-orange-hover transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
               Send Message
             </button>
             <p id="form-success" class="hidden text-center font-body text-sm text-orange font-bold">
               Thank you! Your message has been sent.
+            </p>
+            <p id="form-error" class="hidden text-center font-body text-sm text-red-600 font-bold">
+              Something went wrong. Please try again, or email us directly at
+              <a href="mailto:karuna.kandagatla@gmail.com" class="underline">karuna.kandagatla@gmail.com</a>.
             </p>
           </form>
         </div>
@@ -603,11 +610,41 @@
     document.getElementById('lightbox-close').addEventListener('click', () => lightbox.classList.remove('active'));
     lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('active'); });
 
-    // Contact form
-    function handleSubmit(e) {
-      e.preventDefault();
-      document.getElementById('form-success').classList.remove('hidden');
-      e.target.reset();
+    // Contact form — submits via Formspree (AJAX, no page reload)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById('form-submit-btn');
+        const successMsg = document.getElementById('form-success');
+        const errorMsg = document.getElementById('form-error');
+        const originalBtnText = submitBtn.textContent;
+
+        successMsg.classList.add('hidden');
+        errorMsg.classList.add('hidden');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { Accept: 'application/json' },
+          });
+
+          if (response.ok) {
+            successMsg.classList.remove('hidden');
+            contactForm.reset();
+          } else {
+            errorMsg.classList.remove('hidden');
+          }
+        } catch (err) {
+          errorMsg.classList.remove('hidden');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+      });
     }
 
     // Active nav highlight on scroll
