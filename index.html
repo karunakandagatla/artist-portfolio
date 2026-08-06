@@ -34,6 +34,9 @@
     /* Gallery lightbox */
     #lightbox { display: none; }
     #lightbox.active { display: flex; }
+    /* Gallery slider */
+    #gallery-viewport { scrollbar-width: none; -ms-overflow-style: none; }
+    #gallery-viewport::-webkit-scrollbar { display: none; }
     /* Contact form focus */
     input:focus, textarea:focus {
       outline: 2px dotted #FF6210;
@@ -204,7 +207,7 @@
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row-reverse gap-14 items-start">
       <div class="md:w-2/5 flex-shrink-0">
         <img
-          src="assets/images/guru-chandna-talluri.webp"
+          src="assets/images/guru-chandna-talluri.jpg"
           alt="Guru Smt. Chandna Talluri"
           class="w-full rounded shadow-lg"
         />
@@ -398,49 +401,73 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-150.jpg">
-          <img src="assets/images/gallary/TA-150.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+      <div class="relative">
+        <button id="gallery-prev" type="button" aria-label="Previous photos"
+          class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border-2 border-[#B00020] text-[#B00020] font-bold text-xl shadow-md hover:bg-[#B00020] hover:text-white transition-colors flex items-center justify-center -ml-1 md:ml-0">
+          &#8249;
+        </button>
+        <button id="gallery-next" type="button" aria-label="Next photos"
+          class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border-2 border-[#B00020] text-[#B00020] font-bold text-xl shadow-md hover:bg-[#B00020] hover:text-white transition-colors flex items-center justify-center -mr-1 md:mr-0">
+          &#8250;
+        </button>
+
+        <div id="gallery-viewport" class="overflow-x-auto scroll-smooth snap-x snap-mandatory px-12 md:px-14">
+          <div id="gallery-track" class="flex gap-3">
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-02.jpg">
+              <img src="assets/images/gallary/gallery-new-02.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-01.jpg">
+              <img src="assets/images/gallary/gallery-new-01.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-03.jpg">
+              <img src="assets/images/gallary/gallery-new-03.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-05.jpg">
+              <img src="assets/images/gallary/gallery-new-05.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-06.jpg">
+              <img src="assets/images/gallary/gallery-new-06.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-07.jpg">
+              <img src="assets/images/gallary/gallery-new-07.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-150.jpg">
+              <img src="assets/images/gallary/TA-150.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-88.jpg">
+              <img src="assets/images/gallary/TA-88.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-149.jpg">
+              <img src="assets/images/gallary/TA-149.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-127.jpg">
+              <img src="assets/images/gallary/TA-127.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-143.jpg">
+              <img src="assets/images/gallary/TA-143.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-39.jpg">
+              <img src="assets/images/gallary/TA-39.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-135.jpg">
+              <img src="assets/images/gallary/TA-135.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-152.jpg">
+              <img src="assets/images/gallary/TA-152.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-145.jpg">
+              <img src="assets/images/gallary/TA-145.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-106.jpg">
+              <img src="assets/images/gallary/TA-106.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-04.jpg">
+              <img src="assets/images/gallary/gallery-new-04.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+          </div>
         </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-131.jpg">
-          <img src="assets/images/gallary/TA-131.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square col-span-2 row-span-2" data-src="assets/images/gallary/TA-88.jpg">
-          <img src="assets/images/gallary/TA-88.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-139.jpg">
-          <img src="assets/images/gallary/TA-139.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-149.jpg">
-          <img src="assets/images/gallary/TA-149.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-127.jpg">
-          <img src="assets/images/gallary/TA-127.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-143.jpg">
-          <img src="assets/images/gallary/TA-143.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-138.jpg">
-          <img src="assets/images/gallary/TA-138.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-148.jpg">
-          <img src="assets/images/gallary/TA-148.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-39.jpg">
-          <img src="assets/images/gallary/TA-39.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-135.jpg">
-          <img src="assets/images/gallary/TA-135.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-152.jpg">
-          <img src="assets/images/gallary/TA-152.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-145.jpg">
-          <img src="assets/images/gallary/TA-145.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div class="gallery-item cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-106.jpg">
-          <img src="assets/images/gallary/TA-106.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-        </div>
+
+        <p id="gallery-counter" class="text-center mt-5 font-body text-sm text-brown-mid"></p>
       </div>
     </div>
   </section>
@@ -595,10 +622,46 @@
     menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     function closeMobile() { mobileMenu.classList.add('hidden'); }
 
-    // Lightbox
+    // Gallery slider + lightbox
+    const galleryViewport = document.getElementById('gallery-viewport');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const galleryPrev = document.getElementById('gallery-prev');
+    const galleryNext = document.getElementById('gallery-next');
+    const galleryCounter = document.getElementById('gallery-counter');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    document.querySelectorAll('.gallery-item').forEach(item => {
+
+    function getGalleryStep() {
+      const item = galleryItems[0];
+      if (!item) return galleryViewport.clientWidth;
+      const styles = window.getComputedStyle(galleryViewport.querySelector('#gallery-track'));
+      const gap = parseFloat(styles.gap) || 0;
+      return item.offsetWidth + gap;
+    }
+
+    function updateGalleryCounter() {
+      if (!galleryCounter || !galleryItems.length) return;
+      const step = getGalleryStep();
+      const index = Math.min(
+        galleryItems.length - 1,
+        Math.max(0, Math.round(galleryViewport.scrollLeft / step))
+      );
+      galleryCounter.textContent = `Photo ${index + 1} of ${galleryItems.length}`;
+    }
+
+    if (galleryViewport && galleryItems.length) {
+      galleryPrev.addEventListener('click', () => {
+        galleryViewport.scrollBy({ left: -getGalleryStep(), behavior: 'smooth' });
+      });
+      galleryNext.addEventListener('click', () => {
+        galleryViewport.scrollBy({ left: getGalleryStep(), behavior: 'smooth' });
+      });
+      galleryViewport.addEventListener('scroll', updateGalleryCounter, { passive: true });
+      window.addEventListener('resize', updateGalleryCounter);
+      updateGalleryCounter();
+    }
+
+    galleryItems.forEach(item => {
       item.addEventListener('click', () => {
         lightboxImg.src = item.dataset.src;
         lightbox.classList.add('active');
