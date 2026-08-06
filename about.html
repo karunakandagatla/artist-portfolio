@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Shakthi | Tanvika Karupakula</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FEF1E4',
+            orange: { DEFAULT: '#FF6210', hover: '#F15808' },
+            brown: { dark: '#1C0D0A', mid: '#353535', light: '#E5D7D1' },
+          },
+          fontFamily: {
+            heading: ['Philosopher', 'serif'],
+            body: ['"PT Sans"', 'sans-serif'],
+            devani: ['"Yatra One"', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&family=Yatra+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'PT Sans', sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Philosopher', serif; }
+    nav a.active { color: #FF6210; border-bottom: 2px solid #FF6210; }
+  </style>
+</head>
+<body class="bg-cream text-brown-dark">
+
+  <header class="bg-white shadow-sm sticky top-0 z-50" id="top">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-heading text-2xl font-bold text-brown-dark tracking-wide">Tanvika Karupakula</a>
+      <nav id="desktop-nav" class="hidden md:flex items-center gap-5 text-xs font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="index.html" class="hover:text-orange transition-colors pb-0.5">Home</a>
+        <a href="about.html" class="active hover:text-orange transition-colors pb-0.5">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors pb-0.5">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors pb-0.5">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors pb-0.5">Program</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors pb-0.5">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors pb-0.5">Contact</a>
+        <a href="#" class="bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors ml-2">Livestream</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 cursor-pointer" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-brown-light px-6 pb-5">
+      <nav class="flex flex-col gap-3 pt-4 text-sm font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="index.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Home</a>
+        <a href="about.html" class="text-orange" onclick="closeMobile()">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Program</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Contact</a>
+        <a href="#" class="inline-block bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors w-fit">Livestream</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="relative h-[50vh] min-h-[420px] w-full overflow-hidden">
+    <img src="assets/images/image.png" alt="Tanvika Karupakula Bharathanatyam" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-brown-dark/55"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6">
+      <div class="flex items-center justify-center gap-3 font-devani text-sm uppercase tracking-wide mb-5 text-brown-light">
+        <span>Bharathanatyam</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-orange"></span>
+        <span>Arangetram</span>
+      </div>
+      <h2 class="font-heading text-5xl md:text-6xl font-bold mb-5 text-red-600">About</h2>
+      <p class="font-body text-lg leading-relaxed mb-6 max-w-2xl text-white/90">
+        Discipline, Devotion, and Shakthi
+      </p>
+      <p class="font-body font-bold text-sm uppercase tracking-widest text-white">Saturday, September 5, 2026 &middot; 2:30 PM PDT</p>
+    </div>
+  </section>
+
+  <section class="py-24 px-6 bg-cream">
+    <div class="max-w-6xl mx-auto space-y-10">
+
+      <!-- The Journey -->
+      <article class="bg-amber-50 rounded-xl shadow-md border-t-4 border-[#B00020] overflow-hidden">
+        <div class="flex flex-col md:flex-row gap-8 p-6 md:p-8 items-center">
+          <div class="md:w-1/2">
+            <h2 class="font-heading text-4xl font-bold text-brown-dark mb-3">The Journey</h2>
+            <div class="w-16 h-0.5 mb-6" style="background-color:#B00020;"></div>
+            <div class="font-body text-brown-mid text-lg leading-relaxed space-y-5">
+          <p>Tanvika's journey in Bharatanatyam is a testament to passion, dedication, and an innate love for the arts. Her love affair with dance began at the tender age of five, sparked by a natural inclination toward music and movement. Long before her formal training, Tanvika's artistic spirit shone through as she joyfully practiced steps by the mirror, completely captivated by the rhythm and expression of dance.</p>
+          <p>She officially began her foundational training under the guidance of Guru Deepa Krishnan, where she built a strong technical base and nurtured her deep appreciation for classical art. In early 2023, Tanvika took the next significant step in her artistic evolution by joining Guru Chandana, under whose expert tutelage she refined her abhinaya (expression), stamina, and intricate nritta (pure dance).</p>
+          <p>Through years of unwavering commitment, early practice sessions, and countless hours in the dance studio, Tanvika has blossomed into a graceful and poised classical dancer. Her Arangetram marks a magnificent milestone in this lifelong journey—a celebration of hard work, artistic growth, and a profound devotion to the divine art of Bharatanatyam.</p>
+        </div>
+      </div>
+      <div class="md:w-1/2">
+        <img
+          src="assets/images/gallary/journey-tanvika.png"
+          alt="Tanvika Karupakula in Bharatanatyam costume"
+          class="w-full rounded shadow-md object-cover aspect-[4/5]"
+        />
+          </div>
+        </div>
+      </article>
+
+      <!-- Training & Growth -->
+      <article class="bg-amber-50 rounded-xl shadow-md border-t-4 border-[#B00020] overflow-hidden">
+        <div class="flex flex-col md:flex-row-reverse gap-8 p-6 md:p-8 items-center">
+          <div class="md:w-1/2">
+            <h2 class="font-heading text-4xl font-bold text-brown-dark mb-3">Training &amp; Growth</h2>
+            <div class="w-16 h-0.5 mb-6" style="background-color:#B00020;"></div>
+            <div class="font-body text-brown-mid text-lg leading-relaxed space-y-5">
+              <p>Tanvika's artistic growth has been shaped by a rich blend of rigorous training and diverse performance experiences under the guidance of both Guru Deepa Krishnan and Guru Chandana. Benefiting from the distinct insights and expertise of her gurus, she has continuously expanded her technical precision, stamina, and emotional depth in storytelling.</p>
+              <p>Beyond the studio, the stage has been Tanvika's greatest classroom. Her vibrant dance journey has taken her across continents, allowing her to share her art on prestigious and culturally rich platforms. Among her most cherished milestones are unforgettable performances in:</p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li><strong>Ayodhya, India:</strong> A deeply spiritual and momentous experience performing in the historic heart of India.</li>
+                <li><strong>Sri Lanka:</strong> Showcasing her dedication and grace on an international stage.</li>
+                <li><strong>Local Temples across California:</strong> Connecting deeply with community roots through regular and devotional performances close to home.</li>
+              </ul>
+              <p>Each stage has added a unique layer to Tanvika's artistry, transforming her into a confident, versatile performer ready to embrace the sacred milestone of her Arangetram.</p>
+            </div>
+      </div>
+      <div class="md:w-1/2">
+        <img
+          src="assets/images/gallary/training-growth-tanvika.png"
+          alt="Tanvika Karupakula with Guru in Bharatanatyam training"
+          class="w-full rounded shadow-md object-contain object-center aspect-[4/5] bg-black"
+        />
+          </div>
+        </div>
+      </article>
+
+      <!-- Shakthi -->
+      <article class="bg-amber-50 rounded-xl shadow-md border-t-4 border-[#B00020] overflow-hidden">
+        <div class="flex flex-col md:flex-row gap-8 p-6 md:p-8 items-center">
+          <div class="md:w-1/2">
+            <h2 class="font-heading text-4xl font-bold text-brown-dark mb-1">Shakthi</h2>
+            <p class="font-heading text-xl text-brown-dark mb-3">The Power Within</p>
+            <div class="w-16 h-0.5 mb-6" style="background-color:#B00020;"></div>
+            <div class="font-body text-brown-mid text-lg leading-relaxed space-y-5">
+              <p>Rooted in ancient mythology yet profoundly relevant today, &ldquo;Shakthi: The Power Within&rdquo; is a thematic exploration of the multifaceted dimensions of Shakthi&mdash;the supreme, all-encompassing cosmic energy that creates, nurtures, and transforms the universe.</p>
+              <p>Through the intricate footwork of nritta, the expressive storytelling of abhinaya, and the soul-stirring rhythms of classical music, this presentation brings to life the many faces of the feminine divine: the gentle protector, the fierce destroyer of ignorance, and the infinite source of inner strength, grace, and resilience.</p>
+              <p>Beyond classical storytelling, Shakthi represents a journey of self-discovery and the awakening of the divine spark that resides within every individual. It is a celebration of the inner power, discipline, and resilience that fuel both artistic expression and the human spirit.</p>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="assets/images/gallary/shakthi-tanvika.png"
+              alt="Tanvika Karupakula Bharatanatyam silhouette — Shakthi, The Power Within"
+              class="w-full rounded shadow-md object-cover object-center aspect-[4/3]"
+            />
+          </div>
+        </div>
+      </article>
+
+      <!-- Moments in Dance -->
+      <article class="bg-amber-50 rounded-xl shadow-md border-t-4 border-[#B00020] overflow-hidden">
+        <div class="p-6 md:p-8">
+          <h2 class="font-heading text-4xl font-bold text-brown-dark text-center mb-3">Moments in Dance</h2>
+          <div class="w-16 h-0.5 mb-10 mx-auto" style="background-color:#B00020;"></div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <figure class="overflow-hidden rounded shadow-sm">
+          <img src="assets/images/gallary/gallery-new-02.jpg" alt="Tanvika Karupakula dance moment" loading="lazy" class="w-full aspect-square object-cover object-top" />
+        </figure>
+        <figure class="overflow-hidden rounded shadow-sm">
+          <img src="assets/images/gallary/gallery-new-01.jpg" alt="Tanvika Karupakula dance moment" loading="lazy" class="w-full aspect-square object-cover object-top" />
+        </figure>
+        <figure class="overflow-hidden rounded shadow-sm">
+          <img src="assets/images/gallary/gallery-new-03.jpg" alt="Tanvika Karupakula dance moment" loading="lazy" class="w-full aspect-square object-cover object-top" />
+        </figure>
+        <figure class="overflow-hidden rounded shadow-sm">
+          <img src="assets/images/gallary/gallery-new-05.jpg" alt="Tanvika Karupakula dance moment" loading="lazy" class="w-full aspect-square object-cover object-top" />
+        </figure>
+        <figure class="overflow-hidden rounded shadow-sm">
+          <img src="assets/images/gallary/gallery-new-06.jpg" alt="Tanvika Karupakula dance moment" loading="lazy" class="w-full aspect-square object-cover object-top" />
+        </figure>
+        <figure class="overflow-hidden rounded shadow-sm">
+          <img src="assets/images/gallary/gallery-new-07.jpg" alt="Tanvika Karupakula dance moment" loading="lazy" class="w-full aspect-square object-cover object-top" />
+        </figure>
+        <figure class="overflow-hidden rounded shadow-sm">
+          <img src="assets/images/gallary/TA-150.jpg" alt="Tanvika Karupakula dance moment" loading="lazy" class="w-full aspect-square object-cover object-top" />
+        </figure>
+        <figure class="overflow-hidden rounded shadow-sm">
+          <img src="assets/images/gallary/TA-88.jpg" alt="Tanvika Karupakula dance moment" loading="lazy" class="w-full aspect-square object-cover object-top" />
+        </figure>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="bg-brown-dark text-brown-light py-16 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="font-heading text-4xl font-bold text-white tracking-wide">Shakthi</p>
+      <p class="font-body text-xs uppercase tracking-[0.35em] text-brown-light/70 mt-3">The Power Within</p>
+      <nav class="flex flex-wrap justify-center gap-x-7 gap-y-3 mt-10 font-body text-sm">
+        <a href="index.html" class="hover:text-orange transition-colors">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors">Program</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors">Contact</a>
+        <a href="#" class="hover:text-orange transition-colors">Livestream</a>
+      </nav>
+      <div class="mt-10 pt-6 border-t border-brown-light/20 text-xs font-body text-brown-light/50">
+        &copy; <span id="year"></span> Tanvika Karupakula Bharathanatyam Arangetram. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

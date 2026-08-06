@@ -29,25 +29,49 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'PT Sans', sans-serif; }
     h1,h2,h3,h4,h5,h6 { font-family: 'Philosopher', serif; }
+    nav a.active { color: #FF6210; border-bottom: 2px solid #FF6210; }
   </style>
 </head>
 <body class="bg-cream text-brown-dark">
 
   <!-- ═══════════════════════════════════════════════
-       HEADER / BACK LINK
+       HEADER / NAV
   ════════════════════════════════════════════════ -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
+  <header class="bg-white shadow-sm sticky top-0 z-50" id="top">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2 font-body font-bold uppercase tracking-wider text-xs text-brown-mid hover:text-orange transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-        </svg>
-        Back to Home
-      </a>
       <a href="index.html" class="font-heading text-2xl font-bold text-brown-dark tracking-wide">
         Tanvika Karupakula
       </a>
-      <div class="w-24 hidden md:block"></div>
+
+      <nav id="desktop-nav" class="hidden md:flex items-center gap-5 text-xs font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="index.html" class="hover:text-orange transition-colors pb-0.5">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors pb-0.5">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors pb-0.5">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors pb-0.5">Artists</a>
+        <a href="program.html" class="active hover:text-orange transition-colors pb-0.5">Program</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors pb-0.5">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors pb-0.5">Contact</a>
+        <a href="#" class="bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors ml-2">Livestream</a>
+      </nav>
+
+      <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 cursor-pointer" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-brown-light px-6 pb-5">
+      <nav class="flex flex-col gap-3 pt-4 text-sm font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="index.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors" onclick="closeMobile()">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Artists</a>
+        <a href="program.html" class="text-orange" onclick="closeMobile()">Program</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Contact</a>
+        <a href="#" class="inline-block bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors w-fit">Livestream</a>
+      </nav>
     </div>
   </header>
 
@@ -100,7 +124,7 @@
               <p class="font-body text-brown-mid leading-relaxed">A traditional devotional opening item in Bharatanatyam. It serves as an invocation piece asking for the blessings of Goddess Saraswathi—the deity of knowledge, music, arts, wisdom, and learning—before beginning a performance or practice session.</p>
             </div>
             <div class="md:w-64 flex-shrink-0">
-              <img src="assets\images\program_images\TA-80.jpg" alt="Pushpanjali" loading="lazy" class="w-full h-64 object-cover object-top rounded shadow-sm" />
+              <img src="assets/images/program_images/pushpanjali-tanvika.png" alt="Pushpanjali" loading="lazy" class="w-full h-64 object-contain object-center rounded shadow-sm bg-black" />
             </div>
           </div>
         </article>
@@ -348,13 +372,13 @@
 
       <!-- Links -->
       <nav class="flex flex-wrap justify-center gap-x-7 gap-y-3 mt-10 font-body text-sm">
-        <a href="index.html#hero" class="hover:text-orange transition-colors">Home</a>
-        <a href="index.html#about" class="hover:text-orange transition-colors">About</a>
-        <a href="index.html#guru" class="hover:text-orange transition-colors">Guru</a>
-        <a href="index.html#artists" class="hover:text-orange transition-colors">Artists</a>
+        <a href="index.html" class="hover:text-orange transition-colors">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors">Artists</a>
         <a href="program.html" class="hover:text-orange transition-colors">Program</a>
-        <a href="index.html#gallery" class="hover:text-orange transition-colors">Gallery</a>
-        <a href="index.html#contact" class="hover:text-orange transition-colors">Contact</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors">Contact</a>
         <a href="#" class="hover:text-orange transition-colors">Livestream</a>
       </nav>
 
@@ -370,8 +394,6 @@
   <!-- ═══════════════════════════════════════════════
        SCRIPTS
   ════════════════════════════════════════════════ -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="js/site.js"></script>
 </body>
 </html>

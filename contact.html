@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Shakthi | Tanvika Karupakula</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FEF1E4',
+            orange: { DEFAULT: '#FF6210', hover: '#F15808' },
+            brown: { dark: '#1C0D0A', mid: '#353535', light: '#E5D7D1' },
+          },
+          fontFamily: {
+            heading: ['Philosopher', 'serif'],
+            body: ['"PT Sans"', 'sans-serif'],
+            devani: ['"Yatra One"', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&family=Yatra+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'PT Sans', sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Philosopher', serif; }
+    nav a.active { color: #FF6210; border-bottom: 2px solid #FF6210; }
+    /* Contact form focus */
+    input:focus, textarea:focus {
+      outline: 2px dotted #FF6210;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-cream text-brown-dark">
+
+  <header class="bg-white shadow-sm sticky top-0 z-50" id="top">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-heading text-2xl font-bold text-brown-dark tracking-wide">Tanvika Karupakula</a>
+      <nav id="desktop-nav" class="hidden md:flex items-center gap-5 text-xs font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="index.html" class="hover:text-orange transition-colors pb-0.5">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors pb-0.5">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors pb-0.5">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors pb-0.5">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors pb-0.5">Program</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors pb-0.5">Gallery</a>
+        <a href="contact.html" class="active hover:text-orange transition-colors pb-0.5">Contact</a>
+        <a href="#" class="bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors ml-2">Livestream</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 cursor-pointer" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-brown-light px-6 pb-5">
+      <nav class="flex flex-col gap-3 pt-4 text-sm font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="index.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors" onclick="closeMobile()">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Program</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Gallery</a>
+        <a href="contact.html" class="text-orange" onclick="closeMobile()">Contact</a>
+        <a href="#" class="inline-block bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors w-fit">Livestream</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="relative h-[50vh] min-h-[420px] w-full overflow-hidden">
+    <img src="assets/images/image.png" alt="Tanvika Karupakula Bharathanatyam" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-brown-dark/55"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6">
+      <div class="flex items-center justify-center gap-3 font-devani text-sm uppercase tracking-wide mb-5 text-brown-light">
+        <span>Bharathanatyam</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-orange"></span>
+        <span>Arangetram</span>
+      </div>
+      <h2 class="font-heading text-5xl md:text-6xl font-bold mb-5 text-red-600">Contact</h2>
+      <p class="font-body text-lg leading-relaxed mb-6 max-w-2xl text-white/90">
+        For inquiries about performances, collaborations, or media, we'd love to hear from you.
+      </p>
+      <p class="font-body font-bold text-sm uppercase tracking-widest text-white">Saturday, September 5, 2026 &middot; 2:30 PM PDT</p>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 px-6 bg-cream">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">Get In Touch</p>
+        <h2 class="font-heading text-4xl font-bold text-brown-dark">Contact</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+        <!-- Info -->
+        <div>
+          <p class="font-body text-brown-mid text-lg leading-relaxed mb-10">
+            For inquiries about performances, collaborations, or media, reach out below.
+          </p>
+          <div class="space-y-6 font-body text-brown-mid">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-orange/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-orange fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              <div>
+                <p class="font-bold text-brown-dark text-xs uppercase tracking-wider mb-1">Email</p>
+                <a href="mailto:karuna.kandagatla@gmail.com" class="hover:text-orange transition-colors">karuna.kandagatla@gmail.com</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-orange/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-orange fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </div>
+              <div>
+                <p class="font-bold text-brown-dark text-xs uppercase tracking-wider mb-1">Location</p>
+                <p>Dublin High School, 8151 Village Pkwy, Dublin, CA, 94568</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-10">
+            <p class="font-body font-bold text-brown-dark text-xs uppercase tracking-wider mb-4">Follow</p>
+            <div class="flex gap-3">
+              <a href="#" class="w-11 h-11 rounded-full bg-orange flex items-center justify-center hover:bg-orange-hover transition-colors" aria-label="Instagram">
+                <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              <a href="#" class="w-11 h-11 rounded-full bg-orange flex items-center justify-center hover:bg-orange-hover transition-colors" aria-label="Facebook">
+                <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="#" class="w-11 h-11 rounded-full bg-orange flex items-center justify-center hover:bg-orange-hover transition-colors" aria-label="YouTube">
+                <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div>
+          <!-- Powered by Formspree: https://formspree.io — sends submissions straight to karuna.kandagatla@gmail.com -->
+          <form id="contact-form" class="space-y-5" action="https://formspree.io/f/xvkpovne" method="POST">
+            <div>
+              <label for="name" class="block font-body font-bold text-brown-dark text-xs uppercase tracking-wider mb-2">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name"
+                class="w-full border border-brown-light bg-cream px-4 py-3 font-body text-brown-dark placeholder-brown-light/70 rounded focus:border-orange transition-colors" />
+            </div>
+            <div>
+              <label for="email" class="block font-body font-bold text-brown-dark text-xs uppercase tracking-wider mb-2">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com"
+                class="w-full border border-brown-light bg-cream px-4 py-3 font-body text-brown-dark placeholder-brown-light/70 rounded focus:border-orange transition-colors" />
+            </div>
+            <div>
+              <label for="subject" class="block font-body font-bold text-brown-dark text-xs uppercase tracking-wider mb-2">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Subject"
+                class="w-full border border-brown-light bg-cream px-4 py-3 font-body text-brown-dark placeholder-brown-light/70 rounded focus:border-orange transition-colors" />
+            </div>
+            <div>
+              <label for="message" class="block font-body font-bold text-brown-dark text-xs uppercase tracking-wider mb-2">Message</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Your message…"
+                class="w-full border border-brown-light bg-cream px-4 py-3 font-body text-brown-dark placeholder-brown-light/70 rounded focus:border-orange transition-colors resize-none"></textarea>
+            </div>
+            <!-- Honeypot field to deter spam bots (hidden from real users) -->
+            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+            <button type="submit" id="form-submit-btn"
+              class="w-full bg-orange text-white font-body font-bold uppercase tracking-wider py-3 rounded hover:bg-orange-hover transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+              Send Message
+            </button>
+            <p id="form-success" class="hidden text-center font-body text-sm text-orange font-bold">
+              Thank you! Your message has been sent.
+            </p>
+            <p id="form-error" class="hidden text-center font-body text-sm text-red-600 font-bold">
+              Something went wrong. Please try again, or email us directly at
+              <a href="mailto:karuna.kandagatla@gmail.com" class="underline">karuna.kandagatla@gmail.com</a>.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-brown-dark text-brown-light py-16 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="font-heading text-4xl font-bold text-white tracking-wide">Shakthi</p>
+      <p class="font-body text-xs uppercase tracking-[0.35em] text-brown-light/70 mt-3">The Power Within</p>
+      <nav class="flex flex-wrap justify-center gap-x-7 gap-y-3 mt-10 font-body text-sm">
+        <a href="index.html" class="hover:text-orange transition-colors">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors">Program</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors">Contact</a>
+        <a href="#" class="hover:text-orange transition-colors">Livestream</a>
+      </nav>
+      <div class="mt-10 pt-6 border-t border-brown-light/20 text-xs font-body text-brown-light/50">
+        &copy; <span id="year"></span> Tanvika Karupakula Bharathanatyam Arangetram. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script>
+    // Contact form — submits via Formspree (AJAX, no page reload)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById('form-submit-btn');
+        const successMsg = document.getElementById('form-success');
+        const errorMsg = document.getElementById('form-error');
+        const originalBtnText = submitBtn.textContent;
+
+        successMsg.classList.add('hidden');
+        errorMsg.classList.add('hidden');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { Accept: 'application/json' },
+          });
+
+          if (response.ok) {
+            successMsg.classList.remove('hidden');
+            contactForm.reset();
+          } else {
+            errorMsg.classList.remove('hidden');
+          }
+        } catch (err) {
+          errorMsg.classList.remove('hidden');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

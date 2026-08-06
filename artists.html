@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artists | Shakthi | Tanvika Karupakula</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FEF1E4',
+            orange: { DEFAULT: '#FF6210', hover: '#F15808' },
+            brown: { dark: '#1C0D0A', mid: '#353535', light: '#E5D7D1' },
+          },
+          fontFamily: {
+            heading: ['Philosopher', 'serif'],
+            body: ['"PT Sans"', 'sans-serif'],
+            devani: ['"Yatra One"', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&family=Yatra+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'PT Sans', sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Philosopher', serif; }
+    nav a.active { color: #FF6210; border-bottom: 2px solid #FF6210; }
+  </style>
+</head>
+<body class="bg-cream text-brown-dark">
+
+  <header class="bg-white shadow-sm sticky top-0 z-50" id="top">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-heading text-2xl font-bold text-brown-dark tracking-wide">Tanvika Karupakula</a>
+      <nav id="desktop-nav" class="hidden md:flex items-center gap-5 text-xs font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="index.html" class="hover:text-orange transition-colors pb-0.5">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors pb-0.5">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors pb-0.5">Guru</a>
+        <a href="artists.html" class="active hover:text-orange transition-colors pb-0.5">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors pb-0.5">Program</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors pb-0.5">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors pb-0.5">Contact</a>
+        <a href="#" class="bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors ml-2">Livestream</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 cursor-pointer" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-brown-light px-6 pb-5">
+      <nav class="flex flex-col gap-3 pt-4 text-sm font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="index.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors" onclick="closeMobile()">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Guru</a>
+        <a href="artists.html" class="text-orange" onclick="closeMobile()">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Program</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Contact</a>
+        <a href="#" class="inline-block bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors w-fit">Livestream</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="relative h-[50vh] min-h-[420px] w-full overflow-hidden">
+    <img src="assets/images/image.png" alt="Tanvika Karupakula Bharathanatyam" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-brown-dark/55"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6">
+      <div class="flex items-center justify-center gap-3 font-devani text-sm uppercase tracking-wide mb-5 text-brown-light">
+        <span>Bharathanatyam</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-orange"></span>
+        <span>Arangetram</span>
+      </div>
+      <h2 class="font-heading text-5xl md:text-6xl font-bold mb-5 text-red-600">Artists</h2>
+      <p class="font-body text-lg leading-relaxed mb-6 max-w-2xl text-white/90">
+        Meet the musicians whose melody, rhythm, and devotion bring Shakthi to life on stage.
+      </p>
+      <p class="font-body font-bold text-sm uppercase tracking-widest text-white">Saturday, September 5, 2026 &middot; 2:30 PM PDT</p>
+    </div>
+  </section>
+
+  <section id="artists" class="py-24 px-6 bg-cream">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">The Ensemble</p>
+        <h2 class="font-heading text-4xl font-bold text-brown-dark">The Artists</h2>
+        <p class="font-heading text-xl italic text-brown-mid mt-2">Melody, Rhythm, and Devotion</p>
+        <p class="font-body text-brown-mid text-lg max-w-3xl mx-auto mt-5 leading-relaxed">
+          Shakthi is carried by the conversation between voice, violin, flute, mrudangam, and
+          Tanvika's abhinaya. Meet the artists shaping the devotional world of Rama, Sita, Hanuman,
+          and dharma through melody and rhythm.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+
+        <div class="bg-cream rounded-xl shadow-md border-2 border-[#B00020] overflow-hidden group flex flex-col">
+          <div class="overflow-hidden">
+            <img src="assets/images/artists/Anuradha-Sridhar.webp" alt="Anuradha Sridhar" loading="lazy" class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-7 flex-1">
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">Violin</p>
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-2">Anuradha Sridhar</h3>
+            <p class="font-body text-brown-mid text-sm italic mb-4">A longtime Bay Area ambassador of Carnatic music, rooted in the Lalgudi musical lineage.</p>
+            <div class="font-body text-brown-mid text-sm leading-relaxed space-y-3">
+              <p>Anuradha Sridhar, violinist, vocalist, and composer, has been an active ambassador of Carnatic music in the Bay Area for the past four decades. Her family of legendary musicians traces its musical roots to Saint Tyagaraja through her great-great-grandfather, Lalgudi Ramayyar, a direct disciple of the saint.</p>
+              <p>Anu was trained in music by her mother, Lalgudi Srimathi Brahmanandam, the ingenious violinist and sister of the legendary Lalgudi G. Jayaraman. As a soloist, Anu has performed with her guru in prestigious venues around the world. As a reputed accompanist, she has accompanied many stalwart Carnatic musicians in concerts over the years.</p>
+              <p>She is deeply involved in promoting Carnatic music and has volunteered her artistry for community fundraiser shows supporting organizations such as Asha, Sankara Eye Foundation, Sankara Nethralaya, SwayamKrushi, ISKCON, Livermore Temple, Chinmaya Mission, and Sewa International. She has also collaborated with musicians from other genres in the Pan Asian Music Festival hosted by Stanford University and San Francisco World Music.</p>
+              <p>Anu has choreographed and performed Vadhya Vrindha, a musical ensemble of South Indian classical instruments involving many Bay Area artists. She is an A Top artist of Indian Doordarshan and has been recognized by leading organizations including the Madras Music Academy. She founded Trinity Center for Music in the Bay Area in 1989 and continues to nurture young performers.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-cream rounded-xl shadow-md border-2 border-[#B00020] overflow-hidden group flex flex-col">
+          <div class="overflow-hidden">
+            <img src="assets/images/artists/Keshavan-Ramamurthy.jpg" alt="Keshavan Ramamurthy" loading="lazy" class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-7 flex-1">
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">Mrudangam</p>
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-2">Keshavan Ramamurthy</h3>
+            <p class="font-body text-brown-mid text-sm italic mb-4">A versatile percussionist from a four-generation musical family, known for rhythmic depth and dance collaboration.</p>
+            <div class="font-body text-brown-mid text-sm leading-relaxed space-y-3">
+              <p>Thanjavur Ramamurthy Kesavan is a renowned percussionist and Nattuvangam artist in the field of performing arts. He comes from an illustrious lineage and belongs to a family dedicated to music for four generations.</p>
+              <p>Kesavan began learning Mrudangam at the age of six. By the age of ten, he was accompanying his father, Ramamurthy Bhagavathar, a Harikatha exponent. He also accompanied the renowned spiritual guru Thirumuruga Kirupanandha Variyar.</p>
+              <p>Over the years, Kesavan has become an expert in several percussion instruments including Thavil, Kanjeera, Pakhawaj, and Ghatam. His recognition as a Mrudangam and Nattuvangam artist comes from deep technical command, musical instinct, and humility in collaboration.</p>
+              <p>He is an empanelled artist of ICCR and a B High graded artist in All India Radio and Doordarshan. Kesavan has trained and promoted many students, conducted Mrudangam arangetrams, and composed new Alarippu, Pushpanjali, Jatiswaram, Tillana, and many varieties of jathis in different talams for classical dance productions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-cream rounded-xl shadow-md border-2 border-[#B00020] overflow-hidden group flex flex-col">
+          <div class="overflow-hidden">
+            <img src="assets/images/artists/Srivathsa-Pasumarthi.jpg" alt="Srivathsa Pasumarthi" loading="lazy" class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-7 flex-1">
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">Flute</p>
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-2">Srivathsa Pasumarthi</h3>
+            <p class="font-body text-brown-mid text-sm italic mb-4">A flautist from a family of flute makers and musicians, bringing melodic clarity and rhythmic insight.</p>
+            <div class="font-body text-brown-mid text-sm leading-relaxed space-y-3">
+              <p>Srivathsa Pasumarthi is a seventh-generation flautist from a family of esteemed flutists and flute makers.</p>
+              <p>His musical journey began under the guidance of his father, Pasumarthi Venkata Ramana. He later continued his training under renowned flautist Shri J. B. Shruthi Sagar of Chennai, with whom he has studied for over a decade.</p>
+              <p>Srivathsa brings a strong classical foundation, sensitive melodic phrasing, and a deep understanding of rhythm to the ensemble. He is also an A-graded Mridangam artist of All India Radio, Chennai.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-cream rounded-xl shadow-md border-2 border-[#B00020] overflow-hidden group flex flex-col">
+          <div class="overflow-hidden">
+            <img src="assets/images/artists/Shriya-Anand.webp" alt="Shriya Anand" loading="lazy" class="w-full h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-7 flex-1">
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-1">Vocal</p>
+            <h3 class="font-heading text-2xl font-bold text-brown-dark mb-2">Shriya Anand</h3>
+            <p class="font-body text-brown-mid text-sm italic mb-4">A vocalist and violinist trained under Guru Smt. Anuradha Sridhar for around 17 years.</p>
+            <div class="font-body text-brown-mid text-sm leading-relaxed space-y-3">
+              <p>Shriya Anand is a disciple of Guru Smt. Anuradha Sridhar and has been under her tutelage for around 17 years, learning both vocal and violin.</p>
+              <p>She has given several vocal and violin solo and duet concerts in the United States and India, and has accompanied several upcoming artists and music schools on violin.</p>
+              <p>Shriya has composed music and accompanied on violin for multiple dance productions for independent artists and schools across the nation. She has also been a lead vocalist in many productions by Trinity Center for Music in the United States and India.</p>
+              <p>She has a masters in Clinical Psychology from Columbia University and is currently a researcher at the University of Michigan.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-brown-dark text-brown-light py-16 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="font-heading text-4xl font-bold text-white tracking-wide">Shakthi</p>
+      <p class="font-body text-xs uppercase tracking-[0.35em] text-brown-light/70 mt-3">The Power Within</p>
+      <nav class="flex flex-wrap justify-center gap-x-7 gap-y-3 mt-10 font-body text-sm">
+        <a href="index.html" class="hover:text-orange transition-colors">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors">Program</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors">Contact</a>
+        <a href="#" class="hover:text-orange transition-colors">Livestream</a>
+      </nav>
+      <div class="mt-10 pt-6 border-t border-brown-light/20 text-xs font-body text-brown-light/50">
+        &copy; <span id="year"></span> Tanvika Karupakula Bharathanatyam Arangetram. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

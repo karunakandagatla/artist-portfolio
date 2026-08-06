@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shakthi | Tanvika Karupakula</title>
+  <title>Guru | Shakthi | Tanvika Karupakula</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -36,13 +36,11 @@
 
   <header class="bg-white shadow-sm sticky top-0 z-50" id="top">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="font-heading text-2xl font-bold text-brown-dark tracking-wide">
-        Tanvika Karupakula
-      </a>
+      <a href="index.html" class="font-heading text-2xl font-bold text-brown-dark tracking-wide">Tanvika Karupakula</a>
       <nav id="desktop-nav" class="hidden md:flex items-center gap-5 text-xs font-body font-bold uppercase tracking-wider text-brown-mid">
-        <a href="index.html" class="active hover:text-orange transition-colors pb-0.5">Home</a>
+        <a href="index.html" class="hover:text-orange transition-colors pb-0.5">Home</a>
         <a href="about.html" class="hover:text-orange transition-colors pb-0.5">About</a>
-        <a href="guru.html" class="hover:text-orange transition-colors pb-0.5">Guru</a>
+        <a href="guru.html" class="active hover:text-orange transition-colors pb-0.5">Guru</a>
         <a href="artists.html" class="hover:text-orange transition-colors pb-0.5">Artists</a>
         <a href="program.html" class="hover:text-orange transition-colors pb-0.5">Program</a>
         <a href="gallery.html" class="hover:text-orange transition-colors pb-0.5">Gallery</a>
@@ -57,9 +55,9 @@
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-brown-light px-6 pb-5">
       <nav class="flex flex-col gap-3 pt-4 text-sm font-body font-bold uppercase tracking-wider text-brown-mid">
-        <a href="index.html" class="text-orange" onclick="closeMobile()">Home</a>
+        <a href="index.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Home</a>
         <a href="about.html" class="hover:text-orange transition-colors" onclick="closeMobile()">About</a>
-        <a href="guru.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Guru</a>
+        <a href="guru.html" class="text-orange" onclick="closeMobile()">Guru</a>
         <a href="artists.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Artists</a>
         <a href="program.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Program</a>
         <a href="gallery.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Gallery</a>
@@ -69,51 +67,64 @@
     </div>
   </header>
 
-  <section id="hero" class="relative h-screen min-h-[560px] flex items-center overflow-hidden">
-    <img
-      src="assets/images/AG_Hero_img.png"
-      alt="Tanvika Karupakula performing Bharathanatyam"
-      class="absolute inset-0 w-full h-full object-cover"
-    />
-    <div class="absolute inset-0 bg-brown-dark/45"></div>
-    <div class="relative z-10 w-full md:w-2/3 flex flex-col items-center text-center text-white px-6">
-      <p class="tracking-[0.35em] text-lg md:text-xl max-w-xl mx-auto mb-5 text-brown-light font-serif italic">
-        <span>Shakthi</span> The Power Within
-      </p>
-      <h1 id="name" class="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight" style="color: #b90019;">
-        Tanvika Karupakula
-      </h1>
-      <p id="subtitle" class="tracking-[0.35em] text-lg md:text-xl max-w-xl mx-auto mb-5 text-brown-light font-serif italic">
-        A Bharatanatyam journey exploring the Shakti - The Power Within
-      </p>
-      <div class="w-48 md:w-64 h-px bg-white mb-2"></div>
-      <div class="font-body text-white mb-8 w-full text-center space-y-0.5">
-        <p class="text-sm font-bold tracking-wide whitespace-nowrap">Sat 5 Sept &middot; 2:30 PM PDT</p>
-        <p class="text-xs text-white/90 whitespace-nowrap">Dublin High School, 8151 Village Pkwy, Dublin, CA, 94568</p>
+  <section class="relative h-[50vh] min-h-[420px] w-full overflow-hidden">
+    <img src="assets/images/image.png" alt="Tanvika Karupakula Bharathanatyam" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-brown-dark/55"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6">
+      <div class="flex items-center justify-center gap-3 font-devani text-sm uppercase tracking-wide mb-5 text-brown-light">
+        <span>Bharathanatyam</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-orange"></span>
+        <span>Arangetram</span>
       </div>
-      <a id="rsvp" href="https://evite.me/BBvuNtuDCg" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#E0102B] hover:bg-[#B80D22] text-white px-8 py-3 text-sm font-bold uppercase tracking-wider transition-colors rounded-full ring-2 ring-inset ring-[#FAF3E8] ring-offset-2 ring-offset-[#E0102B] hover:ring-offset-[#B80D22]">
-        Please RSVP
-      </a>
-    </div>
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 text-xs font-body animate-bounce">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+      <h2 class="font-heading text-5xl md:text-6xl font-bold mb-5 text-red-600">Guru</h2>
+      <p class="font-body text-lg leading-relaxed mb-6 max-w-2xl text-white/90">
+        Honoring Smt. Chandna Talluri, the guiding light behind Tanvika's artistic journey.
+      </p>
+      <p class="font-body font-bold text-sm uppercase tracking-widest text-white">Saturday, September 5, 2026 &middot; 2:30 PM PDT</p>
     </div>
   </section>
 
-  <section class="py-20 px-6 bg-orange-100">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
-      <div class="w-full md:w-1/2">
-        <img src="assets/images/arangetram_p2.png" alt="Arangetram performance" class="w-full h-[450px] md:h-[650px] object-cover" />
+  <section id="guru" class="py-24 px-6 bg-cream">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row-reverse gap-14 items-start">
+      <div class="md:w-2/5 flex-shrink-0">
+        <img
+          src="assets/images/guru-chandna-talluri.jpg"
+          alt="Guru Smt. Chandna Talluri"
+          class="w-full rounded shadow-lg"
+        />
       </div>
-      <div class="w-full md:w-1/2 text-center">
-        <p class="font-devani text-2xl mb-3" style="color: #B00020;">What is Arangetram?</p>
-        <div class="w-32 md:w-40 h-0.5 mx-auto mb-6" style="background-color: #B00020;"></div>
-        <p class="font-serif italic text-lg leading-relaxed text-brown-mid mb-5">
-          Arangetram is a Tamil word that means "ascending the stage." It is the traditional debut performance where a dancer offers years of learning, discipline, and devotion before the Guru, family, friends, and well-wishers.
-        </p>
-        <p class="font-serif italic text-lg leading-relaxed text-brown-mid">
-          For Tanvika, this milestone is presented as Shakthi - The Power Within: a Bharatanatyam offering celebrating the divine feminine energy of the Goddess, awakening and embodying that limitless power from within herself.
-        </p>
+      <div class="md:w-3/5">
+        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">The Guru</p>
+        <h2 class="font-heading text-4xl font-bold text-brown-dark mb-1">Smt. Chandna Talluri</h2>
+        <p class="font-heading text-xl italic text-brown-mid mb-6">The Guiding Light</p>
+        <div class="font-body text-brown-mid text-lg leading-relaxed space-y-5">
+          <p>
+            Tanvika's artistic foundation has been shaped by the guidance, patience, and vision of her Guru.
+            Under Smt. Chandna Talluri's care, Tanvika has developed the discipline, strength, expression,
+            and reverence that Bharathanatyam asks of every student.
+          </p>
+          <p>
+            Guru Smt. Chandna's teaching has helped Tanvika understand dance as more than movement. It is
+            prayer, storytelling, rhythm, and a lifelong commitment to learning with humility.
+          </p>
+
+          <div class="border-l-4 border-orange bg-cream/60 px-6 py-5 rounded-r">
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-3">A Note of Gratitude</p>
+            <p class="font-heading text-lg italic text-brown-dark leading-relaxed mb-3">
+              Guru Brahma Gurur Vishnu Guru Devo Maheshwaraha<br />
+              Guru Saakshat Para Brahma Tasmai Sree Gurave Namaha
+            </p>
+            <p class="text-base mb-3">
+              Guru is verily the representative of Brahma, Vishnu, and Shiva. She creates, sustains
+              knowledge, and destroys the weeds of ignorance.
+            </p>
+            <p class="text-base">
+              We offer our heartfelt pranamams to Smt. Chandna for her tireless dedication, patience, and
+              guidance. It is through her vision that Tanvika's artistic journey has blossomed into today's
+              beautiful presentation. Thank you for igniting the light of art and devotion.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

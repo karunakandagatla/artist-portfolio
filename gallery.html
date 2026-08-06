@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Shakthi | Tanvika Karupakula</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FEF1E4',
+            orange: { DEFAULT: '#FF6210', hover: '#F15808' },
+            brown: { dark: '#1C0D0A', mid: '#353535', light: '#E5D7D1' },
+          },
+          fontFamily: {
+            heading: ['Philosopher', 'serif'],
+            body: ['"PT Sans"', 'sans-serif'],
+            devani: ['"Yatra One"', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&family=Yatra+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'PT Sans', sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Philosopher', serif; }
+    nav a.active { color: #FF6210; border-bottom: 2px solid #FF6210; }
+    /* Gallery lightbox */
+    #lightbox { display: none; }
+    #lightbox.active { display: flex; }
+    /* Gallery slider */
+    #gallery-viewport { scrollbar-width: none; -ms-overflow-style: none; }
+    #gallery-viewport::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-cream text-brown-dark">
+
+  <header class="bg-white shadow-sm sticky top-0 z-50" id="top">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-heading text-2xl font-bold text-brown-dark tracking-wide">Tanvika Karupakula</a>
+      <nav id="desktop-nav" class="hidden md:flex items-center gap-5 text-xs font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="index.html" class="hover:text-orange transition-colors pb-0.5">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors pb-0.5">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors pb-0.5">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors pb-0.5">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors pb-0.5">Program</a>
+        <a href="gallery.html" class="active hover:text-orange transition-colors pb-0.5">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors pb-0.5">Contact</a>
+        <a href="#" class="bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors ml-2">Livestream</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 cursor-pointer" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+        <span class="block w-6 h-0.5 bg-brown-dark transition-all"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-brown-light px-6 pb-5">
+      <nav class="flex flex-col gap-3 pt-4 text-sm font-body font-bold uppercase tracking-wider text-brown-mid">
+        <a href="index.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors" onclick="closeMobile()">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Program</a>
+        <a href="gallery.html" class="text-orange" onclick="closeMobile()">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors" onclick="closeMobile()">Contact</a>
+        <a href="#" class="inline-block bg-orange text-white px-4 py-2 rounded hover:bg-orange-hover transition-colors w-fit">Livestream</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="relative h-[50vh] min-h-[420px] w-full overflow-hidden">
+    <img src="assets/images/image.png" alt="Tanvika Karupakula Bharathanatyam" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-brown-dark/55"></div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6">
+      <div class="flex items-center justify-center gap-3 font-devani text-sm uppercase tracking-wide mb-5 text-brown-light">
+        <span>Bharathanatyam</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-orange"></span>
+        <span>Arangetram</span>
+      </div>
+      <h2 class="font-heading text-5xl md:text-6xl font-bold mb-5 text-red-600">Gallery</h2>
+      <p class="font-body text-lg leading-relaxed mb-6 max-w-2xl text-white/90">
+        Moments captured from performances and rehearsals along Tanvika's dance journey.
+      </p>
+      <p class="font-body font-bold text-sm uppercase tracking-widest text-white">Saturday, September 5, 2026 &middot; 2:30 PM PDT</p>
+    </div>
+  </section>
+
+  <section id="gallery" class="py-24 px-6 bg-cream">
+    <div class="max-w-6xl mx-auto bg-cream rounded-xl border-2 border-[#B00020] shadow-md p-8 md:p-10">
+      <div class="text-center mb-14">
+        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">Photography</p>
+        <h2 class="font-heading text-4xl font-bold text-brown-dark">Gallery</h2>
+        <p class="font-body text-brown-mid text-lg max-w-2xl mx-auto mt-4">
+          Moments captured from performances and rehearsals.
+        </p>
+      </div>
+
+      <div class="relative">
+        <button id="gallery-prev" type="button" aria-label="Previous photos"
+          class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border-2 border-[#B00020] text-[#B00020] font-bold text-xl shadow-md hover:bg-[#B00020] hover:text-white transition-colors flex items-center justify-center -ml-1 md:ml-0">
+          &#8249;
+        </button>
+        <button id="gallery-next" type="button" aria-label="Next photos"
+          class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border-2 border-[#B00020] text-[#B00020] font-bold text-xl shadow-md hover:bg-[#B00020] hover:text-white transition-colors flex items-center justify-center -mr-1 md:mr-0">
+          &#8250;
+        </button>
+
+        <div id="gallery-viewport" class="overflow-x-auto scroll-smooth snap-x snap-mandatory px-12 md:px-14">
+          <div id="gallery-track" class="flex gap-3">
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-02.jpg">
+              <img src="assets/images/gallary/gallery-new-02.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-01.jpg">
+              <img src="assets/images/gallary/gallery-new-01.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-03.jpg">
+              <img src="assets/images/gallary/gallery-new-03.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-05.jpg">
+              <img src="assets/images/gallary/gallery-new-05.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-06.jpg">
+              <img src="assets/images/gallary/gallery-new-06.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-07.jpg">
+              <img src="assets/images/gallary/gallery-new-07.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-150.jpg">
+              <img src="assets/images/gallary/TA-150.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-88.jpg">
+              <img src="assets/images/gallary/TA-88.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-149.jpg">
+              <img src="assets/images/gallary/TA-149.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-127.jpg">
+              <img src="assets/images/gallary/TA-127.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-143.jpg">
+              <img src="assets/images/gallary/TA-143.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-39.jpg">
+              <img src="assets/images/gallary/TA-39.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-135.jpg">
+              <img src="assets/images/gallary/TA-135.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-152.jpg">
+              <img src="assets/images/gallary/TA-152.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-145.jpg">
+              <img src="assets/images/gallary/TA-145.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/TA-106.jpg">
+              <img src="assets/images/gallary/TA-106.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="gallery-item snap-start flex-shrink-0 w-[78%] sm:w-[calc(50%-0.375rem)] lg:w-[calc(25%-0.5625rem)] cursor-pointer overflow-hidden rounded group aspect-square" data-src="assets/images/gallary/gallery-new-04.jpg">
+              <img src="assets/images/gallary/gallery-new-04.jpg" alt="Tanvika Karupakula performance photo" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+            </div>
+          </div>
+        </div>
+
+        <p id="gallery-counter" class="text-center mt-5 font-body text-sm text-brown-mid"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[100] bg-brown-dark/90 items-center justify-center p-6">
+    <button id="lightbox-close" class="absolute top-6 right-8 text-white text-5xl leading-none hover:text-orange transition-colors">&times;</button>
+    <img id="lightbox-img" src="" alt="Enlarged photo" class="max-w-full max-h-[85vh] rounded shadow-2xl" />
+  </div>
+
+  <footer class="bg-brown-dark text-brown-light py-16 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="font-heading text-4xl font-bold text-white tracking-wide">Shakthi</p>
+      <p class="font-body text-xs uppercase tracking-[0.35em] text-brown-light/70 mt-3">The Power Within</p>
+      <nav class="flex flex-wrap justify-center gap-x-7 gap-y-3 mt-10 font-body text-sm">
+        <a href="index.html" class="hover:text-orange transition-colors">Home</a>
+        <a href="about.html" class="hover:text-orange transition-colors">About</a>
+        <a href="guru.html" class="hover:text-orange transition-colors">Guru</a>
+        <a href="artists.html" class="hover:text-orange transition-colors">Artists</a>
+        <a href="program.html" class="hover:text-orange transition-colors">Program</a>
+        <a href="gallery.html" class="hover:text-orange transition-colors">Gallery</a>
+        <a href="contact.html" class="hover:text-orange transition-colors">Contact</a>
+        <a href="#" class="hover:text-orange transition-colors">Livestream</a>
+      </nav>
+      <div class="mt-10 pt-6 border-t border-brown-light/20 text-xs font-body text-brown-light/50">
+        &copy; <span id="year"></span> Tanvika Karupakula Bharathanatyam Arangetram. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script>
+    // Gallery slider + lightbox
+    const galleryViewport = document.getElementById('gallery-viewport');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const galleryPrev = document.getElementById('gallery-prev');
+    const galleryNext = document.getElementById('gallery-next');
+    const galleryCounter = document.getElementById('gallery-counter');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function getGalleryStep() {
+      const item = galleryItems[0];
+      if (!item) return galleryViewport.clientWidth;
+      const styles = window.getComputedStyle(galleryViewport.querySelector('#gallery-track'));
+      const gap = parseFloat(styles.gap) || 0;
+      return item.offsetWidth + gap;
+    }
+
+    function updateGalleryCounter() {
+      if (!galleryCounter || !galleryItems.length) return;
+      const step = getGalleryStep();
+      const index = Math.min(
+        galleryItems.length - 1,
+        Math.max(0, Math.round(galleryViewport.scrollLeft / step))
+      );
+      galleryCounter.textContent = `Photo ${index + 1} of ${galleryItems.length}`;
+    }
+
+    if (galleryViewport && galleryItems.length) {
+      galleryPrev.addEventListener('click', () => {
+        galleryViewport.scrollBy({ left: -getGalleryStep(), behavior: 'smooth' });
+      });
+      galleryNext.addEventListener('click', () => {
+        galleryViewport.scrollBy({ left: getGalleryStep(), behavior: 'smooth' });
+      });
+      galleryViewport.addEventListener('scroll', updateGalleryCounter, { passive: true });
+      window.addEventListener('resize', updateGalleryCounter);
+      updateGalleryCounter();
+    }
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        lightboxImg.src = item.dataset.src;
+        lightbox.classList.add('active');
+      });
+    });
+    document.getElementById('lightbox-close').addEventListener('click', () => lightbox.classList.remove('active'));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+  </script>
+</body>
+</html>
