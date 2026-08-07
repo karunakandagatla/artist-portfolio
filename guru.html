@@ -36,7 +36,15 @@
 
   <header class="bg-white shadow-sm sticky top-0 z-50" id="top">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="font-heading text-2xl font-bold text-brown-dark tracking-wide">Tanvika Karupakula</a>
+      <a href="index.html" class="site-logo">
+        <span class="site-logo-mark">
+          <img src="assets/images/shakthi-mark.svg" alt="" width="52" height="52" />
+        </span>
+        <span class="site-logo-text">
+          <span class="site-logo-title">Shakthi</span>
+          <span class="site-logo-tagline">The Power Within</span>
+        </span>
+      </a>
       <nav id="desktop-nav" class="hidden md:flex items-center gap-5 text-xs font-body font-bold uppercase tracking-wider text-brown-mid">
         <a href="index.html" class="hover:text-orange transition-colors pb-0.5">Home</a>
         <a href="about.html" class="hover:text-orange transition-colors pb-0.5">About</a>
@@ -82,52 +90,79 @@
       <p class="desc-text desc-text-light mb-6 max-w-2xl">
         Honoring Smt. Chandna Talluri, the guiding light behind Tanvika's artistic journey.
       </p>
-      <p class="font-body font-bold text-sm uppercase tracking-widest text-white">Saturday, September 5, 2026 &middot; 2:30 PM PDT</p>
+      <div class="font-body text-white space-y-1">
+        <p class="font-bold text-sm uppercase tracking-widest">Saturday, September 5, 2026 &middot; 2:30 PM PDT</p>
+        <p class="text-sm text-white/90">Dublin High School, 8151 Village Parkway, Dublin, CA 94568</p>
+      </div>
     </div>
   </section>
 
   <section id="guru" class="py-24 px-6 bg-cream">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row-reverse gap-14 items-start">
-      <div class="md:w-2/5 flex-shrink-0">
-        <img
-          src="assets/images/guru-chandna-talluri.jpg"
-          alt="Guru Smt. Chandna Talluri"
-          class="w-full rounded shadow-lg"
-        />
-      </div>
-      <div class="md:w-3/5">
-        <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">The Guru</p>
-        <h2 class="font-heading text-4xl font-bold text-brown-dark mb-1">Smt. Chandna Talluri</h2>
-        <p class="font-heading text-xl italic text-brown-mid mb-6">The Guiding Light</p>
-        <div class="desc-text space-y-5">
-          <p>
-            Tanvika's artistic foundation has been shaped by the guidance, patience, and vision of her Guru.
-            Under Smt. Chandna Talluri's care, Tanvika has developed the discipline, strength, expression,
-            and reverence that Bharathanatyam asks of every student.
-          </p>
-          <p>
-            Guru Smt. Chandna's teaching has helped Tanvika understand dance as more than movement. It is
-            prayer, storytelling, rhythm, and a lifelong commitment to learning with humility.
-          </p>
+    <div class="max-w-6xl mx-auto space-y-10">
 
-          <div class="border-l-4 border-orange bg-cream/60 px-6 py-5 rounded-r">
-            <p class="text-orange font-body font-bold uppercase tracking-widest text-xs mb-3">A Note of Gratitude</p>
-            <p class="desc-text mb-3">
-              Guru Brahma Gurur Vishnu Guru Devo Maheshwaraha<br />
-              Guru Saakshat Para Brahma Tasmai Sree Gurave Namaha
-            </p>
-            <p class="desc-text mb-3">
-              Guru is verily the representative of Brahma, Vishnu, and Shiva. She creates, sustains
-              knowledge, and destroys the weeds of ignorance.
-            </p>
-            <p class="desc-text">
-              We offer our heartfelt pranamams to Smt. Chandna for her tireless dedication, patience, and
-              guidance. It is through her vision that Tanvika's artistic journey has blossomed into today's
-              beautiful presentation. Thank you for igniting the light of art and devotion.
-            </p>
+      <!-- The Guiding Light -->
+      <article class="bg-amber-50 rounded-xl shadow-sm border border-[#B00020]/20 p-6 md:p-10">
+        <div class="flex flex-col md:flex-row-reverse gap-10 items-start">
+          <div class="md:w-2/5 flex-shrink-0">
+            <img
+              src="assets/images/guru-chandna-talluri.jpg"
+              alt="Guru Smt. Chandna Talluri"
+              class="w-full rounded-lg shadow-md object-cover"
+            />
+          </div>
+          <div class="md:w-3/5">
+            <p class="text-orange font-body font-bold uppercase tracking-widest text-sm mb-2">The Guru</p>
+            <h2 class="font-heading text-4xl font-bold text-brown-dark mb-1">Smt. Chandna Talluri</h2>
+            <p class="font-heading text-xl italic text-brown-mid mb-6">The Guiding Light</p>
+            <div class="w-16 h-0.5 mb-6" style="background-color:#B00020;"></div>
+            <div class="desc-text space-y-5">
+              <p>
+                Tanvika's artistic foundation has been shaped by the guidance, patience, and vision of her Guru.
+                Under Smt. Chandna Talluri's care, Tanvika has developed the discipline, strength, expression,
+                and reverence that Bharathanatyam asks of every student.
+              </p>
+              <p>
+                Guru Smt. Chandna's teaching has helped Tanvika understand dance as more than movement. It is
+                prayer, storytelling, rhythm, and a lifelong commitment to learning with humility.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </article>
+
+      <!-- A Note of Gratitude -->
+      <article class="bg-amber-50 rounded-xl shadow-sm border border-[#B00020]/20 p-6 md:p-10">
+        <div class="flex flex-col md:flex-row gap-10 items-start">
+          <div class="md:w-3/5">
+            <h2 class="font-heading text-4xl font-bold text-brown-dark mb-6">A Note of Gratitude</h2>
+            <div class="w-16 h-0.5 mb-6" style="background-color:#B00020;"></div>
+            <div class="desc-text space-y-5">
+              <p>
+                Guru Brahma Gurur Vishnu Guru Devo Maheshwaraha<br />
+                Guru Saakshat Para Brahma Tasmai Sree Gurave Namaha
+              </p>
+              <p>
+                Guru is verily the representative of Brahma, Vishnu, and Shiva. She creates, sustains
+                knowledge, and destroys the weeds of ignorance.
+              </p>
+              <p>
+                We offer our heartfelt pranamams to Smt. Chandna for her tireless dedication, patience, and
+                guidance. It is through her vision that Tanvika's artistic journey has blossomed into today's
+                beautiful presentation.
+              </p>
+              <p>Thank you for igniting the light of art and devotion.</p>
+            </div>
+          </div>
+          <div class="md:w-2/5 flex-shrink-0">
+            <img
+              src="assets/images/guru-gratitude-tanvika.png"
+              alt="Tanvika Karupakula with Guru Smt. Chandna Talluri"
+              class="w-full rounded-lg shadow-md object-contain object-center bg-black"
+            />
+          </div>
+        </div>
+      </article>
+
     </div>
   </section>
 
